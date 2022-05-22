@@ -46,7 +46,7 @@ keymap("n","<leader>9","<cmd>lua require('harpoon.ui').nav_file(3)<cr>",opts)
 keymap("n","<leader>0","<cmd>lua require('harpoon.ui').nav_file(4)<cr>",opts)
 
 -- Toggleterm
--- keymap("n","<leader>ö",":Toggleterm<CR>",opts)
+-- keymap("n","<leader>ö","<cmd>exe v:count1 . Toggleterm<CR>",opts)
 
 
 

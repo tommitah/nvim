@@ -79,10 +79,12 @@ return require('packer').startup(function(use)
 	'jose-elias-alvarez/null-ls.nvim'
 	}
 
+	use {
+	'lewis6991/gitsigns.nvim'
+	}
+
 	-- Better terminal integration
-	use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
-	  require("toggleterm").setup()
-	end}
+	use {"akinsho/toggleterm.nvim", tag = 'v1.*'}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

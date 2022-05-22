@@ -6,6 +6,8 @@ require('user.lsp')
 require('user.lualine')
 require('user.telescope')
 require('user.treesitter')
+require('user.toggleterm')
+-- require('user.gitsigns')
 
 -- this last!
 require('user.keymaps')

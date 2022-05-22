@@ -8,6 +8,7 @@ local b_set = vim.bo
 g_set.splitright = true
 g_set.completeopt = 'menuone,noinsert,noselect'
 g_set.termguicolors = true
+g_set.guifont='JetBrains Mono:h16'
 
 w_set.wrap = false
 w_set.cursorline = true
@@ -21,6 +22,9 @@ b_set.softtabstop=4
 b_set.shiftwidth=4
 
 vim.cmd([[
+	let g:neovide_refresh_rate=140
+	let g:neovide_transparency=0.9
+
 	nnoremap Y y$
 	nnoremap n nzzzv
 	nnoremap N Nzzzv
