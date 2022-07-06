@@ -15,9 +15,12 @@
 -- require('colorbuddy').colorscheme('gruvbuddy')
 
 -- Sitruuna
-vim.cmd[[colorscheme sitruuna]]
--- remove the 'darker' bar on the left
-vim.cmd[[highlight SignColumn guibg=#1d2023]]
+-- vim.cmd[[colorscheme sitruuna]]
+-- -- remove the 'darker' bar on the left
+-- vim.cmd[[highlight SignColumn guibg=#1d2023]]
+
+-- Kanagawa
+vim.cmd[[colorscheme kanagawa]]
 
 -- Vadelma
 -- vim.cmd[[colorscheme vadelma]]

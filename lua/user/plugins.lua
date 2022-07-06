@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
 	use 'eemed/sitruuna.vim'
 	use 'severij/vadelma'
 	use 'kadekillary/skull-vim'
+	use "rebelot/kanagawa.nvim"
 	use 'DAddYE/soda.vim'
 	use 'nvim-lualine/lualine.nvim'
 
@@ -44,6 +45,9 @@ return require('packer').startup(function(use)
 	}
 	-- Telescope file browser, yowza
 	use 'nvim-telescope/telescope-file-browser.nvim'
+	
+	-- Use Telescope to change working directory
+	use 'zane-/cder.nvim'
 
 	-- Treesitter for better syntax highlighting
 	use {

@@ -36,10 +36,12 @@ keymap("n","gi","<cmd>lua require('telescope.builtin').lsp_implementations()<cr>
 
 -- Telescope file browser
 keymap("n", "<C-n>", ":Telescope file_browser<CR>", opts)
+-- Telescope change source directory
+keymap("n", "<C-D>", ":Telescope cder<CR>", opts)
 
 -- Harpoon
-keymap("n","<leader>§","<cmd>lua require('harpoon.mark').add_file()<cr>",opts)
-keymap("n","<leader>+","<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",opts)
+keymap("n","<leader>=","<cmd>lua require('harpoon.mark').add_file()<cr>",opts)
+keymap("n","<leader>-","<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",opts)
 keymap("n","<leader>7","<cmd>lua require('harpoon.ui').nav_file(1)<cr>",opts)
 keymap("n","<leader>8","<cmd>lua require('harpoon.ui').nav_file(2)<cr>",opts)
 keymap("n","<leader>9","<cmd>lua require('harpoon.ui').nav_file(3)<cr>",opts)
