@@ -43,8 +43,11 @@ end
 
 M.on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true, buffer=bufnr }
+	vim.keymap.set('n', 'rr', function ()
+		return ':IncRename ' .. vim.fn.expand('<cword>')
+	end, { expr = true })
 	vim.keymap.set("n", "gD", "<cmd>Lspsaga peek_definition<CR>", opts)
-	vim.keymap.set("n", "rr", "<cmd>Lspsaga rename<CR>", opts)
+	-- vim.keymap.set("n", "rr", "<cmd>Lspsaga rename<CR>", opts)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 	vim.keymap.set("n", "gI", vim.lsp.buf.implementation, opts)
 	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
@@ -52,6 +55,9 @@ M.on_attach = function(client, bufnr)
 	vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
 	vim.keymap.set("n", "<leader>q", ":TroubleToggle<CR>", opts)
 	vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]
+
+	-- virtual text shows types
+	require('virtualtypes').on_attach()
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

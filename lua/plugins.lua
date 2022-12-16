@@ -12,7 +12,8 @@ return require('packer').startup(function(use)
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/plenary.nvim' },
-		config = function() require 'plugins.telescope' end }
+		config = function() require 'plugins.telescope' end
+	}
 	use {
 		'nvim-telescope/telescope-file-browser.nvim',
 		'zane-/cder.nvim',
@@ -21,6 +22,15 @@ return require('packer').startup(function(use)
 	-- /TELESCOPE
 
 	use 'mbbill/undotree'
+	use {
+		'lewis6991/impatient.nvim',
+		config = function () require('impatient') end
+	}
+
+	-- Neoscroll doesn't use the 'config = ' table
+	use 'karb94/neoscroll.nvim'
+	require('neoscroll').setup()
+	-------------------------------------------------
 
 	use {
 		'lukas-reineke/indent-blankline.nvim',
@@ -40,31 +50,31 @@ return require('packer').startup(function(use)
 
 	use {
 		'windwp/nvim-ts-autotag',
-		config = function () require 'plugins.autotag' end
+		config = function() require 'plugins.autotag' end
 	}
 
 	-- TODO: something wrong here
 	use {
 		'kylechui/nvim-surround',
 		tag = '*',
-		config = function () require('nvim-surround').setup() end
+		config = function() require('nvim-surround').setup() end
 	}
 
 	use {
 		'anuvyklack/pretty-fold.nvim',
-		config = function () require('pretty-fold').setup() end
+		config = function() require('pretty-fold').setup() end
 	}
 
 	use {
 		'lewis6991/gitsigns.nvim',
-		config = function () require('gitsigns').setup() end
+		config = function() require('gitsigns').setup() end
 	}
 
 
 	use {
 		'akinsho/toggleterm.nvim',
 		tag = '*',
-		config = function () require 'plugins.toggleterm' end
+		config = function() require 'plugins.toggleterm' end
 	}
 
 	use 'tjdevries/express_line.nvim'
@@ -76,15 +86,15 @@ return require('packer').startup(function(use)
 	use 'nicwest/vim-http'
 	use {
 		'simrat39/symbols-outline.nvim',
-		config = function () require('symbols-outline').setup() end
+		config = function() require('symbols-outline').setup() end
 	}
 
-----------------------------------------------------------
-----------------------------------------------------------
-----------------------------------------------------------
-----------------------------------------------------------
-----------------------------------------------------------
-----------------------------------------------------------
+	----------------------------------------------------------
+	----------------------------------------------------------
+	----------------------------------------------------------
+	----------------------------------------------------------
+	----------------------------------------------------------
+	----------------------------------------------------------
 
 	-- LSP (and completion)
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -108,7 +118,7 @@ return require('packer').startup(function(use)
 
 	use {
 		'onsails/lspkind.nvim',
-		config = function () require('lspkind').init() end
+		config = function() require('lspkind').init() end
 	}
 
 	use {
@@ -120,8 +130,15 @@ return require('packer').startup(function(use)
 	use {
 		'glepnir/lspsaga.nvim',
 		branch = 'main',
-		config = function () require 'plugins.lspsaga' end
+		config = function() require 'plugins.lspsaga' end
 	}
+
+	use {
+		'smjonas/inc-rename.nvim',
+		config = function () require('inc_rename').setup() end
+	}
+
+	use 'jubnzv/virtual-types.nvim'
 
 	-- use {
 	-- 	'SmiteshP/nvim-navic',
@@ -134,19 +151,27 @@ return require('packer').startup(function(use)
 	-- }
 
 	-- /LSP
-----------------------------------------------------------
-----------------------------------------------------------
-----------------------------------------------------------
-----------------------------------------------------------
-----------------------------------------------------------
-----------------------------------------------------------
-----------------------------------------------------------
+	----------------------------------------------------------
+	----------------------------------------------------------
+	----------------------------------------------------------
+	----------------------------------------------------------
+	----------------------------------------------------------
+	----------------------------------------------------------
+	----------------------------------------------------------
 
 	-- visual/cosmetic plugins
 	use {
 		'kyazdani42/nvim-tree.lua',
 		requires = {
 			'kyazdani42/nvim-web-devicons'
+		}
+	}
+	use {
+		'folke/noice.nvim',
+		config = function() require 'plugins.noice' end,
+		requires = {
+			'MunifTanjim/nui.nvim',
+			-- 'rcarriga/nvim-notify',
 		}
 	}
 	use 'AlessandroYorba/Alduin'
@@ -158,13 +183,13 @@ return require('packer').startup(function(use)
 	use { 'pineapplegiant/spaceduck', branch = 'main' }
 	use { 'rose-pine/neovim', as = 'rose-pine' }
 	use {
-		'brenoprata10/nvim-highlight-colors' ,
-		config = function () require('nvim-highlight-colors').setup() end
+		'brenoprata10/nvim-highlight-colors',
+		config = function() require('nvim-highlight-colors').setup() end
 	}
 	use {
 		'catppuccin/nvim',
 		as = 'catppuccin',
-		config = function () require 'plugins.catppuccin' end
+		config = function() require 'plugins.catppuccin' end
 	}
 
 	if packer_bootstrap then
