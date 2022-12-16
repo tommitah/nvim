@@ -1,16 +1,16 @@
 require('catppuccin').setup({
-	flavour = 'mocha',
+	flavour = 'latte',
 	term_colors = true,
 	no_italic = false,
 	no_bold = false,
-	color_overrides = {
-		latte = {
-			base = "#E1EEF5",
-		},
-		mocha = {
-			base = "#000000",
-		},
-	},
+	-- color_overrides = {
+	-- 	latte = {
+	-- 		base = "#E1EEF5",
+	-- 	},
+	-- 	mocha = {
+	-- 		base = "#000000",
+	-- 	},
+	-- },
 	transparent_background = true,
 	styles = {
 		comments = { 'italic' },

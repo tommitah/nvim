@@ -20,6 +20,8 @@ return require('packer').startup(function(use)
 	}
 	-- /TELESCOPE
 
+	use 'mbbill/undotree'
+
 	use {
 		'lukas-reineke/indent-blankline.nvim',
 		config = function() require 'plugins.indent' end
@@ -72,7 +74,10 @@ return require('packer').startup(function(use)
 	-- use 'alvan/vim-closetag'
 	use 'j-hui/fidget.nvim'
 	use 'nicwest/vim-http'
-
+	use {
+		'simrat39/symbols-outline.nvim',
+		config = function () require('symbols-outline').setup() end
+	}
 
 ----------------------------------------------------------
 ----------------------------------------------------------
@@ -144,10 +149,18 @@ return require('packer').startup(function(use)
 			'kyazdani42/nvim-web-devicons'
 		}
 	}
-	use 'brenoprata10/nvim-highlight-colors'
 	use 'AlessandroYorba/Alduin'
 	use 'AlessandroYorba/Despacio'
 	use 'louisboilard/pyramid.nvim'
+	use 'nyoom-engineering/oxocarbon.nvim'
+	use { 'bluz71/vim-moonfly-colors', branch = 'cterm-compat' }
+	use { 'mcchrish/zenbones.nvim', requires = 'rktjmp/lush.nvim' }
+	use { 'pineapplegiant/spaceduck', branch = 'main' }
+	use { 'rose-pine/neovim', as = 'rose-pine' }
+	use {
+		'brenoprata10/nvim-highlight-colors' ,
+		config = function () require('nvim-highlight-colors').setup() end
+	}
 	use {
 		'catppuccin/nvim',
 		as = 'catppuccin',

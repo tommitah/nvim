@@ -22,13 +22,16 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, opts)
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, opts)
 vim.keymap.set('n', '<leader>cc', builtin.commands, opts)
 vim.keymap.set('n', '<leader>.', builtin.quickfix, opts)
-vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, opts)
-vim.keymap.set('n', '<leader>gi', builtin.lsp_implementations, opts)
-vim.keymap.set('n', '<leader>gr', builtin.lsp_references, opts)
+vim.keymap.set('n', 'gd', builtin.lsp_definitions, opts)
+vim.keymap.set('n', 'gi', builtin.lsp_implementations, opts)
+vim.keymap.set('n', 'gr', builtin.lsp_references, opts)
 
 keymap('n', '<C-n>', ':Telescope file_browser<CR>', opts)
 keymap('n', '<C-G>', ':Telescope cder<CR>', opts)
 keymap('n', '<C-p>', ':Telescope project<CR>', opts)
+
+-- undotree
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 -- Harpoon
 keymap('n', '<leader>=', "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
@@ -39,4 +42,4 @@ keymap('n', '<leader>9', "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", opts)
 keymap('n', '<leader>0', "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts)
 
 -- LSP toggle formatting on save
--- keymap('n', '<leader><C-f>', ':LspToggleAutoFormat<cr>', opts)
+keymap('n', '<leader><C-f>', ':LspToggleAutoFormat<cr>', opts)

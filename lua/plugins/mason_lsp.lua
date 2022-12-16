@@ -1,44 +1,56 @@
 -- lsp
 require('mason-lspconfig').setup({
-	ensure_installed = { 'sumneko_lua', 'tsserver', 'clangd', 'cmake', 'jsonls', 'eslint' }
+	ensure_installed = {
+		'sumneko_lua',
+		'tsserver',
+		'clangd',
+		'cmake',
+		'jsonls',
+		'eslint',
+		'rust_analyzer',
+	}
 })
 
-local function on_attach(client, bufnr)
-	local opts = { noremap = true, silent = true, buffer=bufnr }
-	vim.keymap.set("n", "gD", "<cmd>Lspsaga peek_definition<CR>", opts)
-	vim.keymap.set("n", "rr", "<cmd>Lspsaga rename<CR>", opts)
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-	vim.keymap.set("n", "gI", vim.lsp.buf.implementation, opts)
-	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-	vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
-	vim.keymap.set("n", "<leader>q", ":TroubleToggle<CR>", opts)
-	vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]
-end
+local icons = require 'plugins.icons'
+require('lsp_config').setup()
+local on_attach = require('lsp_config').on_attach
+local capabilities = require('lsp_config').capabilities
+-- local lsp_config = require 'plugins.lsp_config'
+
+-- local function on_attach(client, bufnr)
 
 require('lspconfig').sumneko_lua.setup {
-	on_attach = on_attach
+	on_attach = on_attach,
+	capabilities = capabilities
 }
 require('lspconfig').tsserver.setup {
-	on_attach = on_attach
+	on_attach = on_attach,
+	capabilities = capabilities
+}
+require('lspconfig').rust_analyzer.setup {
+	on_attach = on_attach,
+	capabilities = capabilities
 }
 require('lspconfig').clangd.setup {
-	on_attach = on_attach
+	on_attach = on_attach,
+	capabilities = capabilities
 }
 require('lspconfig').cmake.setup {
-	on_attach = on_attach
+	on_attach = on_attach,
+	capabilities = capabilities
 }
 require('lspconfig').jsonls.setup {
-	on_attach = on_attach
+	on_attach = on_attach,
+	capabilities = capabilities
 }
 require('lspconfig').eslint.setup {
-	on_attach = on_attach
+	on_attach = on_attach,
+	capabilities = capabilities
 }
 
 -- completion
 local cmp = require'cmp'
 local luasnip = require'luasnip'
-local icons = require'plugins.icons'
 local kind_icons = icons.kind
 
 local check_backspace = function()
@@ -146,7 +158,7 @@ cmp.setup({
   },
   experimental = {
     ghost_text = true,
-    -- native_menu = false,
-  },
+    -- native_menu = true,
+  }
 })
 

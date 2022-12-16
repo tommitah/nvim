@@ -26,11 +26,28 @@ function M.sniprun_enable()
   vim.notify "Enabled SnipRun"
 end
 
+function M.disable_sniprun()
+  M.remove_augroup "_sniprun"
+  vim.cmd [[
+    SnipClose
+    SnipTerminate
+    ]]
+  vim.notify "Disabled SnipRun"
+end
+
+function M.toggle_sniprun()
+  if vim.fn.exists "#_sniprun#TextChanged" == 0 then
+    M.sniprun_enable()
+  else
+    M.disable_sniprun()
+  end
+end
+
 function M.enable_format_on_save()
 	vim.cmd [[
 	augroup format_on_save
-		autocmd!
-		autcmd BufWritePre * lua vim.lsp.buf.formatting()
+	  autocmd!
+	  autocmd BufWritePre * lua vim.lsp.buf.formatting()
 	augroup end
 	]]
 	vim.notify 'Enabled format on save'
@@ -47,23 +64,6 @@ function M.toggle_format_on_save()
 	else
 		M.disable_format_on_save()
 	end
-end
-
-function M.disable_sniprun()
-  M.remove_augroup "_sniprun"
-  vim.cmd [[
-    SnipClose
-    SnipTerminate
-    ]]
-  vim.notify "Disabled SnipRun"
-end
-
-function M.toggle_sniprun()
-  if vim.fn.exists "#_sniprun#TextChanged" == 0 then
-    M.sniprun_enable()
-  else
-    M.disable_sniprun()
-  end
 end
 
 function M.remove_augroup(name)

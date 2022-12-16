@@ -2,9 +2,16 @@
 
 
 
+-- vim.cmd.colorscheme 'zenbones'
+-- vim.cmd.colorscheme 'neobones'
+-- vim.cmd.colorscheme 'tokyobones'
+-- vim.cmd.colorscheme 'duckbones'
 
+-- vim.cmd.colorscheme 'spaceduck'
 
+-- vim.cmd.colorscheme 'oxocarbon'
 
+-- vim.cmd.colorscheme 'moonfly'
 
 -- vim.cmd[[
 -- let g:pyramid_transparent_mode = 1
@@ -14,11 +21,15 @@
 -- ]]
 -- vim.cmd[[ colorscheme pyramid ]]
 
-vim.cmd.colorscheme 'catppuccin'
+require 'plugins.rose_pine'
+vim.cmd.colorscheme 'rose-pine'
+
+-- vim.cmd.colorscheme 'catppuccin'
 
 -- vim.cmd[[ colorscheme alduin ]]
 -- vim.cmd[[ colorscheme despacio ]]
 -- vim.cmd[[ let loaded_matchparen = 1 ]]
+
 -- vim.cmd[[
 -- if !exists('g:neovide')
 -- 	hi Normal guibg=NONE ctermbg=NONE

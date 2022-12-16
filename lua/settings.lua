@@ -1,5 +1,5 @@
 -- Use this initially, please clean it up though...
---
+
 local g_set = vim.o
 local w_set = vim.wo
 local b_set = vim.bo
