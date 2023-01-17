@@ -8,6 +8,20 @@ require('mason-lspconfig').setup({
 		'jsonls',
 		'eslint',
 		'rust_analyzer',
+		'ruff-lsp'
+		-- 'graphql',
+		-- 'pyright'
+	}
+})
+
+-- formatters/linters
+require('mason-null-ls').setup({
+	ensure_installed = {
+		'prettier',
+		'stylua',
+		'eslint_d',
+		'ruff',
+		'black',
 	}
 })
 
@@ -45,7 +59,19 @@ require('lspconfig').jsonls.setup {
 }
 require('lspconfig').eslint.setup {
 	on_attach = on_attach,
-	capabilities = capabilities
+	capabilities = capabilities,
+}
+-- require('lspconfig').graphql.setup {
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- }
+-- require('lspconfig').pyright.setup {
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- }
+require('lspconfig').ruff_lsp.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
 }
 
 -- completion
@@ -67,8 +93,9 @@ cmp.setup({
 		end,
 	},
 	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
+		-- ROUND BORDERS ON COMPLETION
+		-- completion = cmp.config.window.bordered(),
+		-- documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -114,35 +141,37 @@ cmp.setup({
     }),
   },
 	formatting = {
-	  fields = { "kind", "abbr", "menu" },
-    format = function(entry, vim_item)
-      -- Kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-
-      if entry.source.name == "cmp_tabnine" then
-        -- if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-        -- menu = entry.completion_item.data.detail .. " " .. menu
-        -- end
-        vim_item.kind = icons.misc.Robot
-      end
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-      -- NOTE: order matters
-      vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[Nvim]",
-        luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
-
-        -- nvim_lsp = "",
-        -- nvim_lua = "",
-        -- luasnip = "",
-        -- buffer = "",
-        -- path = "",
-        -- emoji = "",
-      })[entry.source.name]
-      return vim_item
-    end,
+		format = require'lspkind'.cmp_format(),
+	-- formatting = {
+	--   fields = { "kind", "abbr", "menu" },
+ --    format = function(entry, vim_item)
+ --      -- Kind icons
+ --      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+	--
+ --      if entry.source.name == "cmp_tabnine" then
+ --        -- if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+ --        -- menu = entry.completion_item.data.detail .. " " .. menu
+ --        -- end
+ --        vim_item.kind = icons.misc.Robot
+ --      end
+ --      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+ --      -- NOTE: order matters
+ --      vim_item.menu = ({
+ --        nvim_lsp = "[LSP]",
+ --        nvim_lua = "[Nvim]",
+ --        luasnip = "[Snippet]",
+ --        buffer = "[Buffer]",
+ --        path = "[Path]",
+	--
+ --        -- nvim_lsp = "",
+ --        -- nvim_lua = "",
+ --        -- luasnip = "",
+ --        -- buffer = "",
+ --        -- path = "",
+ --        -- emoji = "",
+ --      })[entry.source.name]
+ --      return vim_item
+ --    end,
   },
   sources = {
     { name = "nvim_lsp" },

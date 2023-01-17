@@ -22,9 +22,10 @@ return require('packer').startup(function(use)
 	-- /TELESCOPE
 
 	use 'mbbill/undotree'
+
 	use {
 		'lewis6991/impatient.nvim',
-		config = function () require('impatient') end
+		config = function() require('impatient') end
 	}
 
 	-- Neoscroll doesn't use the 'config = ' table
@@ -42,6 +43,12 @@ return require('packer').startup(function(use)
 		config = function() require 'plugins.treesitter' end
 	}
 	use 'nvim-treesitter/playground'
+	use 'nvim-treesitter/refactor'
+
+	use {
+		'shortcuts/no-neck-pain.nvim',
+		tag = '*'
+	}
 
 	use {
 		'numToStr/Comment.nvim',
@@ -82,7 +89,7 @@ return require('packer').startup(function(use)
 	use 'ThePrimeagen/harpoon'
 	use 'jiangmiao/auto-pairs'
 	-- use 'alvan/vim-closetag'
-	use 'j-hui/fidget.nvim'
+	-- use 'j-hui/fidget.nvim'
 	use 'nicwest/vim-http'
 	use {
 		'simrat39/symbols-outline.nvim',
@@ -96,7 +103,7 @@ return require('packer').startup(function(use)
 	----------------------------------------------------------
 	----------------------------------------------------------
 
-	-- LSP (and completion)
+	-- LSP (and completion and linters/formatters...)
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
@@ -115,6 +122,13 @@ return require('packer').startup(function(use)
 		config = function() require 'plugins.mason_lsp' end
 	}
 	use 'neovim/nvim-lspconfig'
+
+	-- formatting and linting
+	use 'jayp0521/mason-null-ls.nvim'
+	use {
+		'jose-elias-alvarez/null-ls.nvim',
+		config = function() require 'plugins.null-ls' end
+	}
 
 	use {
 		'onsails/lspkind.nvim',
@@ -135,7 +149,7 @@ return require('packer').startup(function(use)
 
 	use {
 		'smjonas/inc-rename.nvim',
-		config = function () require('inc_rename').setup() end
+		config = function() require('inc_rename').setup() end
 	}
 
 	use 'jubnzv/virtual-types.nvim'
@@ -174,6 +188,7 @@ return require('packer').startup(function(use)
 			-- 'rcarriga/nvim-notify',
 		}
 	}
+	use 'rebelot/kanagawa.nvim'
 	use 'AlessandroYorba/Alduin'
 	use 'AlessandroYorba/Despacio'
 	use 'louisboilard/pyramid.nvim'

@@ -1,4 +1,5 @@
 vim.cmd [[ autocmd BufWritePost *.ts EslintFixAll ]]
+vim.cmd [[ autocmd BufWritePost *.tsx EslintFixAll ]]
 
 vim.opt.termguicolors = true
 vim.opt.splitright = true
@@ -24,6 +25,13 @@ vim.cmd([[
 	let g:neovide_refresh_rate=140
 	let g:neovide_transparency=0.90
 	let g:termdebug_wide=1
+
+	let g:python_indent = {}
+	let g:python_indent.open_paren = 'shiftwidth() * 2'
+	let g:python_indent.nested_paren = 'shiftwidth()'
+	let g:python_indent.continue = 'shiftwidth() * 2'
+	let g:python_indent.closed_paren_align_last_line = v:false
+
 	set guicursor=n-v-c-i:block
 	nnoremap Y y$
 	nnoremap n nzzzv

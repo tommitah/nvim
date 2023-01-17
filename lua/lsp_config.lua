@@ -25,25 +25,25 @@ M.setup = function()
 		float = {
 			focusable = true,
 			style = 'minimal',
-			border = 'rounded',
+			-- border = 'rounded',
 			source = 'always',
 			header = '',
 			prefix = ''
 		}
 	})
 
-	vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = 'rounded'
-	})
+	-- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+	-- 	border = 'rounded'
+	-- })
 
-	vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = 'rounded'
-	})
+	-- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	-- 	border = 'rounded'
+	-- })
 end
 
 M.on_attach = function(client, bufnr)
-	local opts = { noremap = true, silent = true, buffer=bufnr }
-	vim.keymap.set('n', 'rr', function ()
+	local opts = { noremap = true, silent = true, buffer = bufnr }
+	vim.keymap.set('n', 'rr', function()
 		return ':IncRename ' .. vim.fn.expand('<cword>')
 	end, { expr = true })
 	vim.keymap.set("n", "gD", "<cmd>Lspsaga peek_definition<CR>", opts)
@@ -74,7 +74,7 @@ function M.enable_format_on_save()
 	vim.cmd [[
 	augroup format_on_save
 	  autocmd!
-	  autocmd BufWritePre * lua vim.lsp.buf.formatting()
+	  autocmd BufWritePre * lua vim.lsp.buf.format({ async = true })
 	augroup end
 	]]
 	vim.notify 'Enabled format on save'
@@ -94,9 +94,9 @@ function M.toggle_format_on_save()
 end
 
 function M.remove_augroup(name)
-  if vim.fn.exists("#" .. name) == 1 then
-    vim.cmd("au! " .. name)
-  end
+	if vim.fn.exists("#" .. name) == 1 then
+		vim.cmd("au! " .. name)
+	end
 end
 
 vim.cmd [[ command! LspToggleAutoFormat execute 'lua require("lsp_config").toggle_format_on_save()' ]]
