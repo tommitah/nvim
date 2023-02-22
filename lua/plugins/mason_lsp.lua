@@ -1,16 +1,18 @@
 -- lsp
 require("mason-lspconfig").setup({
 	ensure_installed = {
-		"sumneko_lua",
+		"lua_ls",
 		"tsserver",
 		"clangd",
 		"cmake",
 		"jsonls",
+		"solargraph",
 		"eslint",
 		"rust_analyzer",
-		"ruff-lsp",
+		-- "ruff-lsp",
 		-- 'graphql',
-		-- 'pyright'
+		-- "pyright",
+		"pylsp",
 	},
 })
 
@@ -19,7 +21,7 @@ require("mason-null-ls").setup({
 	ensure_installed = {
 		"prettier",
 		"stylua",
-		"eslint_d",
+		-- "eslint_d",
 		"ruff",
 		"black",
 	},
@@ -33,7 +35,7 @@ local capabilities = require("lsp_config").capabilities
 
 -- local function on_attach(client, bufnr)
 
-require("lspconfig").sumneko_lua.setup({
+require("lspconfig").lua_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -58,21 +60,37 @@ require("lspconfig").jsonls.setup({
 	capabilities = capabilities,
 })
 require("lspconfig").eslint.setup({
-	on_attach = on_attach,
+	-- The reason we don't need to use the 'regular' on_attach
+	-- is because of eslint being purely for formatting and diagnostic hints
+	-- so no need for gd, gr and all that
+	on_attach = function (client, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = bufnr,
+			command = "EslintFixAll"
+		})
+	end,
 	capabilities = capabilities,
 })
 -- require('lspconfig').graphql.setup {
 -- 	on_attach = on_attach,
 -- 	capabilities = capabilities,
 -- }
--- require('lspconfig').pyright.setup {
+-- require("lspconfig").pyright.setup({
 -- 	on_attach = on_attach,
 -- 	capabilities = capabilities,
--- }
-require("lspconfig").ruff_lsp.setup({
+-- })
+require("lspconfig").pylsp.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+require("lspconfig").solargraph.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+-- require("lspconfig").ruff_lsp.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
 
 -- completion
 local cmp = require("cmp")
@@ -111,7 +129,7 @@ cmp.setup({
 		-- Accept currently selected item. If none selected, `select` first item.
 		-- Set `select` to `false` to only confirm explicitly selected items.
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
-		["<Tab>"] = cmp.mapping(function(fallback)
+		["<C-s>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expandable() then

@@ -1,4 +1,4 @@
-require 'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup({
 	autotag = {
 		enable = true,
 	},
@@ -18,12 +18,12 @@ require 'nvim-treesitter.configs'.setup {
 	refactor = {
 		highlight_definitions = {
 			enable = true,
-			clear_on_cursor_move = true
+			clear_on_cursor_move = true,
 		},
 		smart_rename = {
 			enable = true,
 			keymaps = {
-				smart_rename = "grr",
+				smart_rename = "rr",
 			},
 		},
 		navigation = {
@@ -36,5 +36,5 @@ require 'nvim-treesitter.configs'.setup {
 				goto_previous_usage = "<a-#>",
 			},
 		},
-	}
-}
+	},
+})
