@@ -17,7 +17,26 @@
 -- ]])
 -- vim.cmd([[ colorscheme pyramid ]])
 
+-- require("plugins.nordic_theme")
 -- require("nordic").load()
+
+-- "luisiacc/gruvbox-baby",
+-- vim.cmd.colorscheme('gruvbox-baby')
+-- "ramojus/mellifluous.nvim",
+-- require("mellifluous").setup({
+-- 	color_set = "alduin",
+-- })
+-- vim.cmd.colorscheme("mellifluous")
+-- "lewpoly/sherbet.nvim",
+-- vim.cmd.colorscheme("sherbet")
+
+require("neosolarized").setup({
+	background_set = false,
+})
+
+-- require("vscode").setup({
+-- 	transparent = false,
+-- })
 
 -- require("plugins.rose_pine")
 -- vim.cmd.colorscheme("rose-pine")
@@ -27,8 +46,8 @@
 -- vim.cmd.colorscheme("tokyonight-day")
 -- vim.cmd.colorscheme("tokyonight-moon")
 
-require("plugins.gruvbox")
-vim.cmd.colorscheme("gruvbox")
+-- require("plugins.gruvbox")
+-- vim.cmd.colorscheme("gruvbox")
 
 -- require("kanagawa").setup({
 -- 	undercurl = false, -- enable undercurls

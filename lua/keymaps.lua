@@ -26,7 +26,8 @@ vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
 vim.keymap.set("n", "gi", builtin.lsp_implementations, opts)
 vim.keymap.set("n", "gr", builtin.lsp_references, opts)
 vim.keymap.set("n", "<leader>cs", builtin.colorscheme, opts)
-vim.keymap.set("n", "<C-n>", ":Telescope file_browser<cr>", opts)
+-- vim.keymap.set("n", "<C-n>", ":Telescope file_browser<cr>", opts)
+vim.keymap.set("n", "<leader>nn", ":Telescope file_browser<cr>", opts)
 
 -- undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
@@ -35,13 +36,18 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 vim.keymap.set("n", "<leader>v", vim.cmd.NvimTreeToggle, opts)
 
 -- Harpoon
-keymap("n", "<leader>=", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
-keymap("n", "<leader>-", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
+keymap("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
+keymap("n", "<leader>p", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
 keymap("n", "<leader>6", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", opts)
 keymap("n", "<leader>7", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", opts)
 keymap("n", "<leader>8", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", opts)
 keymap("n", "<leader>9", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts)
 keymap("n", "<leader>0", "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", opts)
+
+-- Inc-rename
+vim.keymap.set("n", "rr", function()
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true })
 
 -- LSP toggle formatting on save
 -- NOTE: lsp formatting on save is fucking slow with null_ls, so don't use it on save

@@ -1,4 +1,15 @@
-require("lazy_config")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	-- necessities, QOL
@@ -14,6 +25,13 @@ require("lazy").setup({
 	"zane-/cder.nvim",
 	"nvim-telescope/telescope-project.nvim",
 	-- /TELESCOPE
+	{
+		"rest-nvim/rest.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("rest-nvim").setup()
+		end,
+	},
 	"mbbill/undotree",
 	{
 		"lewis6991/impatient.nvim",
@@ -73,14 +91,19 @@ require("lazy").setup({
 			require("plugins.toggleterm")
 		end,
 	},
-	-- "tjdevries/express_line.nvim",
 	{
-		"windwp/windline.nvim",
+		"tjdevries/express_line.nvim",
 		config = function()
-			-- require("wlsample.vscode")
-			require("wlsample.evil_line")
+			require("plugins.express_line")
 		end,
 	},
+	-- {
+	-- 	"windwp/windline.nvim",
+	-- 	config = function()
+	-- 		-- require("wlsample.vscode")
+	-- 		require("wlsample.vscode")
+	-- 	end,
+	-- },
 	"ThePrimeagen/harpoon",
 	"jiangmiao/auto-pairs",
 	"nicwest/vim-http",
@@ -102,9 +125,14 @@ require("lazy").setup({
 	"hrsh7th/cmp-path",
 	"hrsh7th/cmp-cmdline",
 	"hrsh7th/nvim-cmp",
-	"saadparwaiz1/cmp_luasnip",
-	"L3MON4D3/LuaSnip",
 	"rafamadriz/friendly-snippets",
+	{
+		"L3MON4D3/LuaSnip",
+		-- version = "<CurrentMajor>.*",
+		build = "make install_jsregexp",
+		dependencies = { "rafamadriz/friendly-snippets" },
+	},
+	"saadparwaiz1/cmp_luasnip",
 	{
 		"williamboman/mason.nvim",
 		config = function()
@@ -127,13 +155,13 @@ require("lazy").setup({
 		end,
 	},
 	-- This is JUST for scala
-	{
-		"scalameta/nvim-metals",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("plugins.metals")
-		end,
-	},
+	-- {
+	-- 	"scalameta/nvim-metals",
+	-- 	dependencies = { "nvim-lua/plenary.nvim" },
+	-- 	config = function()
+	-- 		require("plugins.metals")
+	-- 	end,
+	-- },
 	{
 		"onsails/lspkind.nvim",
 		config = function()
@@ -194,27 +222,71 @@ require("lazy").setup({
 		dependencies = {
 			"kyazdani42/nvim-web-devicons",
 		},
-		config = function ()
-			require("nvim-tree").setup()
-		end
+		config = function()
+            require("plugins.tree")
+		end,
 	},
-
+	-- {
+	-- 	"sidebar-nvim/sidebar.nvim",
+	-- 	config = function()
+	-- 		require("sidebar-nvim").setup({ open = true })
+	-- 	end,
+	-- },
 	"igorgue/danger",
 	"folke/tokyonight.nvim",
 	"rebelot/kanagawa.nvim",
+	{
+		"svrana/neosolarized.nvim",
+		dependencies = {
+			"tjdevries/colorbuddy.vim",
+		},
+		lazy = false,
+		priority = 1000,
+	},
 	{
 		"ellisonleao/gruvbox.nvim",
 		lazy = false,
 		priority = 1000,
 	},
 	"AlessandroYorba/Alduin",
+	{
+		"Mofiqul/vscode.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 	"AlessandroYorba/Despacio",
 	"louisboilard/pyramid.nvim",
 	"nyoom-engineering/oxocarbon.nvim",
-	"AlexvZyl/nordic.nvim",
-	{ "bluz71/vim-moonfly-colors",           branch = "cterm-compat" },
-	{ "mcchrish/zenbones.nvim",              dependencies = "rktjmp/lush.nvim" },
-	{ "pineapplegiant/spaceduck",            branch = "main" },
+	{
+		"AlexvZyl/nordic.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"luisiacc/gruvbox-baby",
+		branch = "main",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"kvrohit/rasmus.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"ramojus/mellifluous.nvim",
+        dependencies = { "rktjmp/lush.nvim" },
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"lewpoly/sherbet.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{ "bluz71/vim-moonfly-colors", branch = "cterm-compat" },
+	{ "mcchrish/zenbones.nvim", dependencies = "rktjmp/lush.nvim" },
+	{ "pineapplegiant/spaceduck", branch = "main" },
 	{ "rose-pine/neovim" },
 	{
 		"brenoprata10/nvim-highlight-colors",
