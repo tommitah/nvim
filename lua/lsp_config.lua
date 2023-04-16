@@ -24,7 +24,7 @@ M.setup = function()
 		float = {
 			focusable = true,
 			style = "minimal",
-			border = 'rounded',
+			border = "rounded",
 			source = "always",
 			header = "",
 			prefix = "",
@@ -49,6 +49,7 @@ M.on_attach = function(client, bufnr)
 	-- vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<cr>", opts)
 	-- vim.keymap.set("n", "rr", "<cmd>Lspsaga rename<CR>", opts)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+	vim.keymap.set("n", "<leader>fr", "<cmd>Lspsaga lsp_finder<CR>", opts)
 	vim.keymap.set("n", "gI", vim.lsp.buf.implementation, opts)
 	vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)

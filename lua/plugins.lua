@@ -25,19 +25,16 @@ require("lazy").setup({
 	"zane-/cder.nvim",
 	"nvim-telescope/telescope-project.nvim",
 	-- /TELESCOPE
-	{
-		"rest-nvim/rest.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("rest-nvim").setup()
-		end,
-	},
 	"mbbill/undotree",
 	{
 		"lewis6991/impatient.nvim",
 		config = function()
 			require("impatient")
 		end,
+	},
+	{
+		"TimUntersberger/neogit",
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{ "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
 	{
@@ -223,7 +220,7 @@ require("lazy").setup({
 			"kyazdani42/nvim-web-devicons",
 		},
 		config = function()
-            require("plugins.tree")
+			require("plugins.tree")
 		end,
 	},
 	-- {
@@ -234,12 +231,27 @@ require("lazy").setup({
 	-- },
 	"igorgue/danger",
 	"folke/tokyonight.nvim",
-	"rebelot/kanagawa.nvim",
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"lalitmee/cobalt2.nvim",
+		dependencies = { "tjdevries/colorbuddy.nvim" },
+		lazy = false,
+		priority = 1000,
+	},
 	{
 		"svrana/neosolarized.nvim",
 		dependencies = {
 			"tjdevries/colorbuddy.vim",
 		},
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"ishan9299/nvim-solarized-lua",
 		lazy = false,
 		priority = 1000,
 	},
@@ -275,7 +287,7 @@ require("lazy").setup({
 	},
 	{
 		"ramojus/mellifluous.nvim",
-        dependencies = { "rktjmp/lush.nvim" },
+		dependencies = { "rktjmp/lush.nvim" },
 		lazy = false,
 		priority = 1000,
 	},
