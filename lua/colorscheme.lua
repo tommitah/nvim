@@ -1,5 +1,5 @@
--- vim.cmd.colorscheme 'zenbones'
--- vim.cmd([[ set background=light ]])
+vim.cmd.colorscheme 'zenbones'
+vim.cmd([[ set background=light ]])
 
 -- vim.cmd.colorscheme 'neobones'
 -- vim.cmd.colorscheme 'tokyobones'
@@ -61,8 +61,8 @@
 -- vim.cmd.colorscheme("tokyonight-day")
 -- vim.cmd.colorscheme("tokyonight-moon")
 
-require("plugins.gruvbox")
-vim.cmd.colorscheme("gruvbox")
+-- require("plugins.gruvbox")
+-- vim.cmd.colorscheme("gruvbox")
 
 -- require("kanagawa").setup({
 -- 	undercurl = false, -- enable undercurls
@@ -88,8 +88,8 @@ vim.cmd.colorscheme("gruvbox")
 --         light = "lotus"
 --     },
 -- })
--- vim.cmd.colorscheme("kanagawa-lotus")
---
+-- vim.cmd.colorscheme("kanagawa")
+
 -- vim.cmd.colorscheme("danger_dark")
 
 -- vim.cmd.colorscheme("catppuccin")
