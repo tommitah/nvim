@@ -31,6 +31,8 @@ local icons = require("plugins.icons")
 require("lsp_config").setup()
 local on_attach = require("lsp_config").on_attach
 local capabilities = require("lsp_config").capabilities
+-- This is *unused* but necessary for completion/hover doc for neovim api
+local neodev = require("plugins.neodev").setup()
 -- local lsp_config = require 'plugins.lsp_config'
 
 -- local function on_attach(client, bufnr)
@@ -38,6 +40,24 @@ local capabilities = require("lsp_config").capabilities
 require("lspconfig").lua_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	settings = {
+		Lua = {
+			runtime = {
+				version = jit and "LuaJIT" or _VERSION,
+				path = {
+					"lua/?.lua",
+					"lua/?/init.lua",
+				},
+				pathStrict = true,
+			},
+			diagnostics = { globals = { "vim" } },
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			telemetry = { enable = false },
+			completion = { callSnippet = "Replace" },
+		},
+	},
 })
 require("lspconfig").tsserver.setup({
 	on_attach = on_attach,
@@ -63,10 +83,10 @@ require("lspconfig").eslint.setup({
 	-- The reason we don't need to use the 'regular' on_attach
 	-- is because of eslint being purely for formatting and diagnostic hints
 	-- so no need for gd, gr and all that
-	on_attach = function (client, bufnr)
+	on_attach = function(client, bufnr)
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			buffer = bufnr,
-			command = "EslintFixAll"
+			command = "EslintFixAll",
 		})
 	end,
 	capabilities = capabilities,

@@ -32,6 +32,16 @@ require("lazy").setup({
 			require("impatient")
 		end,
 	},
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	config = function()
+	-- 		require("plugins.noice")
+	-- 	end,
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"rcarriga/nvim-notify",
+	-- 	},
+	-- },
 	{
 		"TimUntersberger/neogit",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -150,6 +160,9 @@ require("lazy").setup({
 		config = function()
 			require("plugins.null-ls")
 		end,
+	},
+	{
+		"folke/neodev.nvim",
 	},
 	-- This is JUST for scala
 	-- {

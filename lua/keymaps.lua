@@ -46,10 +46,15 @@ keymap("n", "<leader>0", "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", opts)
 
 -- Inc-rename
 vim.keymap.set("n", "rr", function()
-  return ":IncRename " .. vim.fn.expand("<cword>")
+	return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true })
 
 -- LSP toggle formatting on save
 -- NOTE: lsp formatting on save is fucking slow with null_ls, so don't use it on save
 -- keymap("n", "<leader><C-f>", ":LspToggleAutoFormat<cr>", opts)
-keymap("n", "<leader><C-f>", "<cmd>lua vim.lsp.buf.format({ filter = function(client) return client.name ~= 'null_ls' end })<cr>", opts)
+keymap(
+	"n",
+	"<leader><C-f>",
+	"<cmd>lua vim.lsp.buf.format({ filter = function(client) return client.name ~= 'null_ls' end })<cr>",
+	opts
+)

@@ -42,9 +42,9 @@
 -- require("colorbuddy").colorscheme('cobalt2')
 
 -- vim.cmd[[ set background=light ]]
-vim.g.solarized_termtrans = 1
-vim.g.solarized_diffmode = 'low'
-vim.cmd.colorscheme("solarized")
+-- vim.g.solarized_termtrans = 1
+-- vim.g.solarized_diffmode = 'low'
+-- vim.cmd.colorscheme("solarized")
 -- vim.cmd.colorscheme("solarized-high")
 -- vim.cmd.colorscheme("solarized-flat")
 -- vim.cmd.colorscheme("solarized-low")
@@ -61,8 +61,8 @@ vim.cmd.colorscheme("solarized")
 -- vim.cmd.colorscheme("tokyonight-day")
 -- vim.cmd.colorscheme("tokyonight-moon")
 
--- require("plugins.gruvbox")
--- vim.cmd.colorscheme("gruvbox")
+require("plugins.gruvbox")
+vim.cmd.colorscheme("gruvbox")
 
 -- require("kanagawa").setup({
 -- 	undercurl = false, -- enable undercurls
@@ -108,22 +108,22 @@ vim.cmd.colorscheme("solarized")
 -- ]])
 
 
-local links = {
-  ['@lsp.type.namespace'] = '@namespace',
-  ['@lsp.type.type'] = '@type',
-  ['@lsp.type.class'] = '@type',
-  ['@lsp.type.enum'] = '@type',
-  ['@lsp.type.interface'] = '@type',
-  ['@lsp.type.struct'] = '@structure',
-  ['@lsp.type.parameter'] = '@parameter',
-  ['@lsp.type.variable'] = '@variable',
-  ['@lsp.type.property'] = '@property',
-  ['@lsp.type.enumMember'] = '@constant',
-  ['@lsp.type.function'] = '@function',
-  ['@lsp.type.method'] = '@method',
-  ['@lsp.type.macro'] = '@macro',
-  ['@lsp.type.decorator'] = '@function',
-}
-for newgroup, oldgroup in pairs(links) do
-  vim.api.nvim_set_hl(0, newgroup, { link = oldgroup, default = true  })
-end
+-- local links = {
+--   ['@lsp.type.namespace'] = '@namespace',
+--   ['@lsp.type.type'] = '@type',
+--   ['@lsp.type.class'] = '@type',
+--   ['@lsp.type.enum'] = '@type',
+--   ['@lsp.type.interface'] = '@type',
+--   ['@lsp.type.struct'] = '@structure',
+--   ['@lsp.type.parameter'] = '@parameter',
+--   ['@lsp.type.variable'] = '@variable',
+--   ['@lsp.type.property'] = '@property',
+--   ['@lsp.type.enumMember'] = '@constant',
+--   ['@lsp.type.function'] = '@function',
+--   ['@lsp.type.method'] = '@method',
+--   ['@lsp.type.macro'] = '@macro',
+--   ['@lsp.type.decorator'] = '@function',
+-- }
+-- for newgroup, oldgroup in pairs(links) do
+--   vim.api.nvim_set_hl(0, newgroup, { link = oldgroup, default = true  })
+-- end
