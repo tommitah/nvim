@@ -49,6 +49,19 @@ vim.keymap.set("n", "rr", function()
 	return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true })
 
+-- Dap keybinds for debuggging
+vim.keymap.set("n", "<C-b>", ":DapToggleBreakpoint<cr>", opts)
+
+local function open_debug_ui()
+	local widgets = require("dap.ui.widgets")
+	local sidebar = widgets.sidebar(widgets.scopes)
+	sidebar.open()
+end
+vim.keymap.set("n", "<C-s>", open_debug_ui, opts)
+vim.keymap.set("n", "<C-3>", ":DapStepInto<cr>", opts)
+vim.keymap.set("n", "<C-4>", ":DapStepOut<cr>", opts)
+vim.keymap.set("n", "<C-5>", ":DapStepOver<cr>", opts)
+
 -- LSP toggle formatting on save
 -- NOTE: lsp formatting on save is fucking slow with null_ls, so don't use it on save
 -- keymap("n", "<leader><C-f>", ":LspToggleAutoFormat<cr>", opts)

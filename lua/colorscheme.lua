@@ -1,5 +1,13 @@
 vim.cmd.colorscheme 'zenbones'
 vim.cmd([[ set background=light ]])
+vim.cmd([[
+if !exists('g:neovide')
+	hi Normal guibg=NONE ctermbg=NONE
+	hi LineNr guibg=NONE ctermbg=NONE
+	hi SignColumn guibg=NONE ctermbg=NONE
+	hi EndOfBuffer guibg=NONE ctermbg=NONE
+end
+]])
 
 -- vim.cmd.colorscheme 'neobones'
 -- vim.cmd.colorscheme 'tokyobones'
@@ -106,7 +114,7 @@ vim.cmd([[ set background=light ]])
 -- 	hi EndOfBuffer guibg=NONE ctermbg=NONE
 -- end
 -- ]])
-
+--
 
 -- local links = {
 --   ['@lsp.type.namespace'] = '@namespace',

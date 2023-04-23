@@ -164,6 +164,27 @@ require("lazy").setup({
 	{
 		"folke/neodev.nvim",
 	},
+	-- This is JUST for <RUST>!
+	{
+		"rust-lang/rust.vim",
+		config = function()
+			vim.g.rustfmt_autosave = 1
+		end,
+	},
+	{
+		"saecki/crates.nvim",
+	},
+	{
+		"simrat39/rust-tools.nvim",
+		dependencies = "neovim/nvim-lspconfig",
+		config = function()
+			require("plugins.rust")
+		end,
+	},
+	{
+		"mfussenegger/nvim-dap",
+	},
+	-- </RUST>
 	-- This is JUST for scala
 	-- {
 	-- 	"scalameta/nvim-metals",
