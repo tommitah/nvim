@@ -18,7 +18,7 @@ keymap("v", "<C-K>", ":m '>-2<CR>gv=gv", opts)
 
 -- TELESCOPE
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
+-- vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, opts)
 vim.keymap.set("n", "<leader>cc", builtin.commands, opts)
 vim.keymap.set("n", "<leader>.", builtin.quickfix, opts)
@@ -27,13 +27,14 @@ vim.keymap.set("n", "gi", builtin.lsp_implementations, opts)
 vim.keymap.set("n", "gr", builtin.lsp_references, opts)
 vim.keymap.set("n", "<leader>cs", builtin.colorscheme, opts)
 -- vim.keymap.set("n", "<C-n>", ":Telescope file_browser<cr>", opts)
-vim.keymap.set("n", "<leader>nn", ":Telescope file_browser<cr>", opts)
+-- vim.keymap.set("n", "<leader>nn", ":Telescope file_browser<cr>", opts)
 
 -- undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
--- FileTree
+-- FileTree(s)
 vim.keymap.set("n", "<leader>v", vim.cmd.NvimTreeToggle, opts)
+vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
 
 -- Harpoon
 keymap("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)

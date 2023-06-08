@@ -1,13 +1,18 @@
-vim.cmd.colorscheme 'zenbones'
-vim.cmd([[ set background=light ]])
-vim.cmd([[
-if !exists('g:neovide')
-	hi Normal guibg=NONE ctermbg=NONE
-	hi LineNr guibg=NONE ctermbg=NONE
-	hi SignColumn guibg=NONE ctermbg=NONE
-	hi EndOfBuffer guibg=NONE ctermbg=NONE
-end
-]])
+-- vim.cmd.colorscheme 'zenbones'
+-- vim.cmd([[ set background=light ]])
+
+-- vim.cmd([[ set background=light ]])
+-- vim.cmd.colorscheme('minicyan')
+-- vim.cmd([[
+-- if !exists('g:neovide')
+-- 	hi Normal guibg=NONE ctermbg=NONE
+-- 	hi LineNr guibg=NONE ctermbg=NONE
+-- 	hi SignColumn guibg=NONE ctermbg=NONE
+-- 	hi EndOfBuffer guibg=NONE ctermbg=NONE
+-- end
+-- ]])
+-- vim.cmd.colorscheme('minischeme')
+-- vim.cmd([[ set background=dark ]])
 
 -- vim.cmd.colorscheme 'neobones'
 -- vim.cmd.colorscheme 'tokyobones'
@@ -60,6 +65,7 @@ end
 -- require("vscode").setup({
 -- 	transparent = true,
 -- })
+-- vim.cmd.colorscheme('vscode')
 
 -- require("plugins.rose_pine")
 -- vim.cmd.colorscheme("rose-pine")
@@ -72,31 +78,8 @@ end
 -- require("plugins.gruvbox")
 -- vim.cmd.colorscheme("gruvbox")
 
--- require("kanagawa").setup({
--- 	undercurl = false, -- enable undercurls
--- 	commentStyle = { italic = true },
--- 	functionStyle = {},
--- 	keywordStyle = {},
--- 	statementStyle = {},
--- 	typeStyle = {},
--- 	variablebuiltinStyle = {},
--- 	specialReturn = true, -- special highlight for the return keyword
--- 	specialException = true, -- special highlight for exception handling keywords
--- 	transparent = false, -- do not set background color
--- 	dimInactive = false, -- dim inactive window `:h hl-NormalNC`
--- 	globalStatus = true, -- adjust window separators highlight for laststatus=3
--- 	terminalColors = true, -- define vim.g.terminal_color_{0,17}
--- 	colors = {},
--- 	-- overrides = {},
--- 	-- theme = "default", -- Load "default" theme or the experimental "light" theme
--- 	theme = "lotus", -- Load "default" theme or the experimental "light" theme
---     background = {
---         -- dark = "dragon",
---         dark = "wave",
---         light = "lotus"
---     },
--- })
--- vim.cmd.colorscheme("kanagawa")
+require("plugins.kanagawa")
+vim.cmd.colorscheme("kanagawa")
 
 -- vim.cmd.colorscheme("danger_dark")
 

@@ -5,9 +5,15 @@ local capabilities = require("lsp_config").capabilities
 local opts = {
     server = {
         on_attach = on_attach,
-        capabilities = capabilities
+        capabilities = capabilities,
+    },
+    tools = {
+        inlay_hints = {
+            auto = false,
+        },
     }
 }
+
 
 require("rust-tools").setup(opts)
 local crates = require("crates")

@@ -14,7 +14,7 @@ M.setup = function()
 	end
 
 	vim.diagnostic.config({
-		virtual_text = true,
+		-- virtual_text = true,
 		signs = {
 			active = signs,
 		},
@@ -58,7 +58,7 @@ M.on_attach = function(client, bufnr)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
 
 	-- virtual text shows types
-	require("virtualtypes").on_attach()
+	-- require("virtualtypes").on_attach()
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
