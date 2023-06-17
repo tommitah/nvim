@@ -40,13 +40,14 @@ require("lazy").setup({
             require("impatient")
         end,
     },
-    { "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
+    -- { "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
     {
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require("plugins.treesitter")
         end,
     },
+    "nvim-treesitter/nvim-treesitter-context",
     "nvim-treesitter/playground",
     "nvim-treesitter/refactor",
     -- {
@@ -74,16 +75,10 @@ require("lazy").setup({
             require("gitsigns").setup()
         end,
     },
-    -- {
-    --     "tjdevries/express_line.nvim",
-    --     config = function()
-    --         require("plugins.express_line")
-    --     end,
-    -- },
     {
-        "windwp/windline.nvim",
+        "tjdevries/express_line.nvim",
         config = function()
-            require("wlsample.vscode")
+            require("plugins.express_line")
         end,
     },
     "ThePrimeagen/harpoon",
@@ -128,9 +123,6 @@ require("lazy").setup({
         config = function()
             require("plugins.null-ls")
         end,
-    },
-    {
-        "folke/neodev.nvim",
     },
     -- This is JUST for <RUST>!
     {
@@ -222,14 +214,6 @@ require("lazy").setup({
         priority = 1000,
     },
     {
-        "svrana/neosolarized.nvim",
-        dependencies = {
-            "tjdevries/colorbuddy.vim",
-        },
-        lazy = false,
-        priority = 1000,
-    },
-    {
         "ishan9299/nvim-solarized-lua",
         lazy = false,
         priority = 1000,
@@ -246,9 +230,9 @@ require("lazy").setup({
     },
     {
         "echasnovski/mini.nvim",
-        config = function ()
+        config = function()
             require("plugins.mini")
-        end
+        end,
     },
     {
         "Mofiqul/vscode.nvim",
@@ -276,5 +260,17 @@ require("lazy").setup({
         config = function()
             require("plugins.catppuccin")
         end,
+    },
+    {
+        "ramojus/mellifluous.nvim",
+        config = function()
+            require("plugins.mellifluous")
+        end,
+    },
+    {
+        "maxmx03/solarized.nvim",
+        config = function()
+            require("plugins.solarized")
+        end
     },
 })

@@ -8,4 +8,4 @@ require("colorscheme")
 --
 -- This one just hates being loaded before the colorscheme, so maybe make sure that 
 -- you run it last
-require("plugins.indent")
+-- require("plugins.indent")

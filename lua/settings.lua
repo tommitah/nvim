@@ -1,9 +1,3 @@
--- vim.cmd [[ autocmd BufWritePost *.ts EslintFixAll ]]
--- vim.cmd [[ autocmd BufWritePost *.tsx EslintFixAll ]]
-
--- for scala, can take off
-vim.opt_global.shortmess:remove("F")
-
 vim.opt.termguicolors = true
 vim.opt.splitright = true
 vim.opt.completeopt = "menuone,noinsert,noselect"
@@ -15,9 +9,14 @@ vim.opt.ignorecase = true
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes:1"
-vim.opt.cmdheight = 0
+-- vim.opt.cmdheight = 0
+
+-- this is for the dots in tab and line endings
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+-- vim.opt.listchars:append("eol:↴")
 
 vim.opt.scrolloff = 8
 vim.opt.tabstop = 4

@@ -3,6 +3,7 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
         "tsserver",
+        "tailwindcss",
         -- "clangd",
         -- "cmake",
         "jsonls",
@@ -32,58 +33,23 @@ local icons = require("plugins.icons")
 require("lsp_config").setup()
 local on_attach = require("lsp_config").on_attach
 local capabilities = require("lsp_config").capabilities
--- This is *unused* but necessary for completion/hover doc for neovim api
-local neodev = require("plugins.neodev").setup()
--- local lsp_config = require 'plugins.lsp_config'
-
--- local function on_attach(client, bufnr)
 
 require("lspconfig").lua_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    -- settings = {
-    -- 	Lua = {
-    -- 		runtime = {
-    -- 			version = jit and "LuaJIT" or _VERSION,
-    -- 			path = {
-    -- 				"lua/?.lua",
-    -- 				"lua/?/init.lua",
-    -- 			},
-    -- 			pathStrict = true,
-    -- 		},
-    -- 		diagnostics = { globals = { "vim" } },
-    -- 		workspace = {
-    -- 			library = vim.api.nvim_get_runtime_file("", true),
-    -- 		},
-    -- 		telemetry = { enable = false },
-    -- 		completion = { callSnippet = "Replace" },
-    -- 	},
-    -- },
 })
 require("lspconfig").tsserver.setup({
     on_attach = on_attach,
     capabilities = capabilities,
 })
--- Commented out since this lsp is setup in its own file
--- require("lspconfig").rust_analyzer.setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- 	settings = {
--- 		["rust-analyzer"] = {
--- 			cargo = {
--- 				allFeatures = true,
--- 			},
--- 		},
--- 	},
--- })
+require("lspconfig").tailwindcss.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
 require("lspconfig").clangd.setup({
     on_attach = on_attach,
     capabilities = capabilities,
 })
--- require("lspconfig").cmake.setup({
---     on_attach = on_attach,
---     capabilities = capabilities,
--- })
 require("lspconfig").jsonls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
@@ -100,26 +66,6 @@ require("lspconfig").eslint.setup({
     end,
     capabilities = capabilities,
 })
--- require('lspconfig').graphql.setup {
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- }
--- require("lspconfig").pyright.setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- })
--- require("lspconfig").pylsp.setup({
---     on_attach = on_attach,
---     capabilities = capabilities,
--- })
--- require("lspconfig").solargraph.setup({
---     on_attach = on_attach,
---     capabilities = capabilities,
--- })
--- require("lspconfig").ruff_lsp.setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- })
 
 -- completion
 local cmp = require("cmp")
@@ -241,7 +187,8 @@ cmp.setup({
 
 require("lsp_signature").setup({
     bind = true,
-    hint_prefix = " ",
+    hint_prefix = "$ ",
+    floating_window = false,
     handler_opts = {
         border = "rounded",
     },

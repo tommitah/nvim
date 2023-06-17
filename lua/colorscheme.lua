@@ -57,7 +57,7 @@
 -- vim.cmd[[ set background=light ]]
 -- vim.g.solarized_termtrans = 1
 -- vim.g.solarized_diffmode = 'low'
--- vim.cmd.colorscheme("solarized")
+vim.cmd.colorscheme("solarized")
 -- vim.cmd.colorscheme("solarized-high")
 -- vim.cmd.colorscheme("solarized-flat")
 -- vim.cmd.colorscheme("solarized-low")
@@ -78,8 +78,10 @@
 -- require("plugins.gruvbox")
 -- vim.cmd.colorscheme("gruvbox")
 
-require("plugins.kanagawa")
-vim.cmd.colorscheme("kanagawa")
+-- require("plugins.kanagawa")
+-- vim.cmd.colorscheme("kanagawa")
+
+-- vim.cmd.colorscheme("mellifluous")
 
 -- vim.cmd.colorscheme("danger_dark")
 
