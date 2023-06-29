@@ -18,7 +18,7 @@ keymap("v", "<C-K>", ":m '>-2<CR>gv=gv", opts)
 
 -- TELESCOPE
 local builtin = require("telescope.builtin")
--- vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
+vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, opts)
 vim.keymap.set("n", "<leader>cc", builtin.commands, opts)
 vim.keymap.set("n", "<leader>.", builtin.quickfix, opts)

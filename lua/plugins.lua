@@ -25,6 +25,12 @@ require("lazy").setup({
     "zane-/cder.nvim",
     "nvim-telescope/telescope-project.nvim",
     "nvim-telescope/telescope-ui-select.nvim",
+    {
+        "jinh0/eyeliner.nvim",
+        config = function()
+            require("plugins.eyeliner")
+        end,
+    },
     -- ahem, not telescope but another finder
     {
         "jake-stewart/jfind.nvim",
@@ -40,7 +46,6 @@ require("lazy").setup({
             require("impatient")
         end,
     },
-    -- { "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
     {
         "nvim-treesitter/nvim-treesitter",
         config = function()
@@ -50,12 +55,6 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter-context",
     "nvim-treesitter/playground",
     "nvim-treesitter/refactor",
-    -- {
-    --     "numToStr/Comment.nvim",
-    --     config = function()
-    --         require("Comment").setup()
-    --     end,
-    -- },
     {
         "windwp/nvim-ts-autotag",
         config = function()
@@ -124,6 +123,26 @@ require("lazy").setup({
             require("plugins.null-ls")
         end,
     },
+    {
+        "glepnir/lspsaga.nvim",
+        event = "LspAttach",
+        config = function()
+            require("plugins.lspsaga")
+        end,
+        dependencies = {
+            { "nvim-tree/nvim-web-devicons" },
+            { "nvim-treesitter/nvim-treesitter" },
+        }
+    },
+    -- TS tools to replace tsserver? Check this out at some point
+    -- {
+    --     "pmizio/typescript-tools.nvim",
+    --     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    --     opts = {},
+    --     config = function ()
+    --         require("plugins.ts-tools")
+    --     end
+    -- },
     -- This is JUST for <RUST>!
     {
         "rust-lang/rust.vim",
@@ -156,7 +175,7 @@ require("lazy").setup({
     },
     {
         "folke/trouble.nvim",
-        dependencies = "kyazdani42/nvim-web-devicons",
+        dependencies = "nvim-tree/nvim-web-devicons",
         config = function()
             require("trouble").setup()
         end,
@@ -271,6 +290,6 @@ require("lazy").setup({
         "maxmx03/solarized.nvim",
         config = function()
             require("plugins.solarized")
-        end
+        end,
     },
 })

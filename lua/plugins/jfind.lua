@@ -13,6 +13,6 @@ jfind.setup({
     border = "single",
     tmux = true,
     formatPaths = true,
-    key = "ff"
-    -- key = "<c-f>"
+    -- key = "<leader>ff"
+    key = "<c-f>"
 })
