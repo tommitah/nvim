@@ -1,3 +1,4 @@
+vim.loader.enable()
 vim.opt.termguicolors = true
 vim.opt.splitright = true
 vim.opt.completeopt = "menuone,noinsert,noselect"

@@ -2,11 +2,11 @@ local success, solarized = pcall(require, "solarized")
 
 vim.o.background = "dark"
 
-solarized:setup {
-    config = {
-        -- theme = "vim",
-        theme = "neovim",
-        -- theme = "vscode",
-        transparent = true,
-    }
-}
+solarized.setup({
+    transparent = true,
+    -- theme = "vim",
+    theme = "neo",
+    -- theme = "vscode",
+})
+
+-- vim.cmd.colorscheme("solarized")

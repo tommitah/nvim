@@ -21,9 +21,6 @@ require("lazy").setup({
             require("plugins.telescope")
         end,
     },
-    "nvim-telescope/telescope-file-browser.nvim",
-    "zane-/cder.nvim",
-    "nvim-telescope/telescope-project.nvim",
     "nvim-telescope/telescope-ui-select.nvim",
     {
         "jinh0/eyeliner.nvim",
@@ -41,12 +38,6 @@ require("lazy").setup({
     -- /TELESCOPE
     "mbbill/undotree",
     {
-        "lewis6991/impatient.nvim",
-        config = function()
-            require("impatient")
-        end,
-    },
-    {
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require("plugins.treesitter")
@@ -63,7 +54,6 @@ require("lazy").setup({
     },
     {
         "kylechui/nvim-surround",
-        -- tag = "*",
         config = function()
             require("nvim-surround").setup()
         end,
@@ -97,7 +87,6 @@ require("lazy").setup({
     "rafamadriz/friendly-snippets",
     {
         "L3MON4D3/LuaSnip",
-        -- version = "<CurrentMajor>.*",
         build = "make install_jsregexp",
         dependencies = { "rafamadriz/friendly-snippets" },
     },
@@ -123,26 +112,15 @@ require("lazy").setup({
             require("plugins.null-ls")
         end,
     },
-    {
-        "glepnir/lspsaga.nvim",
-        event = "LspAttach",
-        config = function()
-            require("plugins.lspsaga")
-        end,
-        dependencies = {
-            { "nvim-tree/nvim-web-devicons" },
-            { "nvim-treesitter/nvim-treesitter" },
-        }
-    },
     -- TS tools to replace tsserver? Check this out at some point
-    -- {
-    --     "pmizio/typescript-tools.nvim",
-    --     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    --     opts = {},
-    --     config = function ()
-    --         require("plugins.ts-tools")
-    --     end
-    -- },
+    {
+        "pmizio/typescript-tools.nvim",
+        dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+        opts = {},
+        config = function ()
+            require("plugins.ts-tools")
+        end
+    },
     -- This is JUST for <RUST>!
     {
         "rust-lang/rust.vim",
@@ -204,14 +182,9 @@ require("lazy").setup({
     -- visual/cosmetic plugins
     {
         "j-hui/fidget.nvim",
+        tag = "legacy",
         config = function()
             require("fidget").setup()
-        end,
-    },
-    {
-        "andweeb/presence.nvim",
-        config = function()
-            require("plugins.presence")
         end,
     },
     {
@@ -229,11 +202,6 @@ require("lazy").setup({
     {
         "lalitmee/cobalt2.nvim",
         dependencies = { "tjdevries/colorbuddy.nvim" },
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "ishan9299/nvim-solarized-lua",
         lazy = false,
         priority = 1000,
     },

@@ -1,5 +1,6 @@
--- vim.cmd.colorscheme 'zenbones'
--- vim.cmd([[ set background=light ]])
+vim.g.zenbones = { lightness = "dim", transparent_background = true }
+vim.cmd.colorscheme 'zenbones'
+vim.cmd([[ set background=light ]])
 
 -- vim.cmd([[ set background=light ]])
 -- vim.cmd.colorscheme('minicyan')
@@ -78,8 +79,8 @@
 -- require("plugins.gruvbox")
 -- vim.cmd.colorscheme("gruvbox")
 
-require("plugins.kanagawa")
-vim.cmd.colorscheme("kanagawa")
+-- require("plugins.kanagawa")
+-- vim.cmd.colorscheme("kanagawa")
 
 -- vim.cmd.colorscheme("mellifluous")
 
