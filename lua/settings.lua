@@ -3,7 +3,8 @@ vim.opt.termguicolors = true
 vim.opt.splitright = true
 vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.termguicolors = true
-vim.opt.guifont = "hermit:h14"
+-- vim.opt.guifont = "hermit:h14"
+vim.opt.guifont = "JetBrainsMono Nerd Font:h14"
 vim.opt.showmode = false
 vim.opt.ignorecase = true
 

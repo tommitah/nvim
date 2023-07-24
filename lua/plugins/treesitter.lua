@@ -20,12 +20,6 @@ require("nvim-treesitter.configs").setup({
             enable = true,
             clear_on_cursor_move = true,
         },
-        -- smart_rename = {
-        -- 	enable = true,
-        -- 	keymaps = {
-        -- 		smart_rename = "rr",
-        -- 	},
-        -- },
         navigation = {
             enable = true,
             keymaps = {

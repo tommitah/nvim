@@ -104,20 +104,26 @@ require("lazy").setup({
         end,
     },
     "neovim/nvim-lspconfig",
-    -- formatting and linting
-    "jayp0521/mason-null-ls.nvim",
     {
-        "jose-elias-alvarez/null-ls.nvim",
+        "mfussenegger/nvim-lint",
         config = function()
-            require("plugins.null-ls")
-        end,
+            require("plugins.lint")
+        end
     },
+    -- formatting and linting
+    -- "jayp0521/mason-null-ls.nvim",
+    -- {
+    --     "jose-elias-alvarez/null-ls.nvim",
+    --     config = function()
+    --         require("plugins.null-ls")
+    --     end,
+    -- },
     -- TS tools to replace tsserver? Check this out at some point
     {
         "pmizio/typescript-tools.nvim",
         dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
         opts = {},
-        config = function ()
+        config = function()
             require("plugins.ts-tools")
         end
     },
@@ -260,4 +266,21 @@ require("lazy").setup({
             require("plugins.solarized")
         end,
     },
+    {
+        "projekt0n/github-nvim-theme",
+        config = function ()
+            require("plugins.github-theme")
+        end
+    },
+    {
+        "projekt0n/caret.nvim",
+    },
+    {
+        "neanias/everforest-nvim",
+        lazy = false,
+        priority = 1000,
+        config = function ()
+            require("plugins.everforest")
+        end
+    }
 })

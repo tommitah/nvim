@@ -4,28 +4,8 @@ require("mason-lspconfig").setup({
         "lua_ls",
         "tsserver",
         "tailwindcss",
-        -- "clangd",
-        -- "cmake",
         "jsonls",
-        -- "solargraph",
-        "eslint",
         "rust_analyzer",
-        -- "ruff-lsp",
-        -- 'graphql',
-        -- "pyright",
-        -- "pylsp",
-    },
-})
-
--- formatters/linters
-require("mason-null-ls").setup({
-    ensure_installed = {
-        "prettier",
-        "stylua",
-        -- "eslint_d",
-        -- "ruff",
-        -- "black",
-        "rustfmt",
     },
 })
 
@@ -38,32 +18,20 @@ require("lspconfig").lua_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
 })
--- require("lspconfig").tsserver.setup({
+-- require("lspconfig").tailwindcss.setup({
 --     on_attach = on_attach,
 --     capabilities = capabilities,
 -- })
-require("lspconfig").tailwindcss.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-})
-require("lspconfig").clangd.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-})
-require("lspconfig").jsonls.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-})
 require("lspconfig").eslint.setup({
-    -- The reason we don't need to use the 'regular' on_attach
-    -- is because of eslint being purely for formatting and diagnostic hints
-    -- so no need for gd, gr and all that
     on_attach = function(client, bufnr)
         vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = bufnr,
             command = "EslintFixAll",
         })
-    end,
+    end
+})
+require("lspconfig").jsonls.setup({
+    on_attach = on_attach,
     capabilities = capabilities,
 })
 
@@ -93,7 +61,7 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ["<S-TAB>"] = cmp.mapping.select_prev_item(),
         ["<TAB>"] = cmp.mapping.select_next_item(),
-        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs( -1), { "i", "c" }),
+        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
         ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
@@ -123,8 +91,8 @@ cmp.setup({
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable( -1) then
-                luasnip.jump( -1)
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
             else
                 fallback()
             end

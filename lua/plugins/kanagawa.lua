@@ -17,8 +17,8 @@ require("kanagawa").setup({
 	-- theme = "default", -- Load "default" theme or the experimental "light" theme
 	-- theme = "lotus", -- Load "default" theme or the experimental "light" theme
     background = {
-        -- dark = "dragon",
-        dark = "wave",
+        dark = "dragon",
+        -- dark = "wave",
         light = "lotus"
     },
 })

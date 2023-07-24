@@ -1,6 +1,6 @@
-vim.g.zenbones = { lightness = "dim", transparent_background = true }
-vim.cmd.colorscheme 'zenbones'
-vim.cmd([[ set background=light ]])
+-- vim.g.zenbones = { lightness = "dim", transparent_background = true }
+-- vim.cmd.colorscheme 'zenbones'
+-- vim.cmd([[ set background=light ]])
 
 -- vim.cmd([[ set background=light ]])
 -- vim.cmd.colorscheme('minicyan')
@@ -81,6 +81,9 @@ vim.cmd([[ set background=light ]])
 
 -- require("plugins.kanagawa")
 -- vim.cmd.colorscheme("kanagawa")
+
+-- github theme
+-- vim.cmd.colorscheme("github_dark_colorblind")
 
 -- vim.cmd.colorscheme("mellifluous")
 
