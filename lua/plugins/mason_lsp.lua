@@ -14,6 +14,11 @@ require("lsp_config").setup()
 local on_attach = require("lsp_config").on_attach
 local capabilities = require("lsp_config").capabilities
 
+-- for JS/TS
+local typescript_tools = require("typescript-tools")
+typescript_tools.setup({
+    on_attach = on_attach
+})
 require("lspconfig").lua_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,

@@ -23,18 +23,23 @@ require("lazy").setup({
     },
     "nvim-telescope/telescope-ui-select.nvim",
     {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build =
+        "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+    },
+    {
         "jinh0/eyeliner.nvim",
         config = function()
             require("plugins.eyeliner")
         end,
     },
     -- ahem, not telescope but another finder
-    {
-        "jake-stewart/jfind.nvim",
-        config = function()
-            require("plugins.jfind")
-        end,
-    },
+    -- {
+    --     "jake-stewart/jfind.nvim",
+    --     config = function()
+    --         require("plugins.jfind")
+    --     end,
+    -- },
     -- /TELESCOPE
     "mbbill/undotree",
     {
@@ -44,13 +49,13 @@ require("lazy").setup({
         end,
     },
     "nvim-treesitter/nvim-treesitter-context",
-    "nvim-treesitter/playground",
-    "nvim-treesitter/refactor",
+    -- "nvim-treesitter/playground",
+    -- "nvim-treesitter/refactor",
     {
         "windwp/nvim-ts-autotag",
         config = function()
             require("plugins.autotag")
-        end,
+        end
     },
     {
         "kylechui/nvim-surround",
@@ -71,7 +76,6 @@ require("lazy").setup({
         end,
     },
     "ThePrimeagen/harpoon",
-    "nicwest/vim-http",
     ---------------------------------------------------------
     ----------------------------------------------------------
     ----------------------------------------------------------
@@ -110,22 +114,10 @@ require("lazy").setup({
             require("plugins.lint")
         end
     },
-    -- formatting and linting
-    -- "jayp0521/mason-null-ls.nvim",
-    -- {
-    --     "jose-elias-alvarez/null-ls.nvim",
-    --     config = function()
-    --         require("plugins.null-ls")
-    --     end,
-    -- },
-    -- TS tools to replace tsserver? Check this out at some point
     {
         "pmizio/typescript-tools.nvim",
         dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
         opts = {},
-        config = function()
-            require("plugins.ts-tools")
-        end
     },
     -- This is JUST for <RUST>!
     {
@@ -186,13 +178,13 @@ require("lazy").setup({
     ----------------------------------------------------------
     ----------------------------------------------------------
     -- visual/cosmetic plugins
-    {
-        "j-hui/fidget.nvim",
-        tag = "legacy",
-        config = function()
-            require("fidget").setup()
-        end,
-    },
+    -- {
+    --     "j-hui/fidget.nvim",
+    --     tag = "legacy",
+    --     config = function()
+    --         require("fidget").setup()
+    --     end,
+    -- },
     {
         "stevearc/oil.nvim",
         opts = {},
@@ -268,7 +260,7 @@ require("lazy").setup({
     },
     {
         "projekt0n/github-nvim-theme",
-        config = function ()
+        config = function()
             require("plugins.github-theme")
         end
     },
@@ -279,8 +271,20 @@ require("lazy").setup({
         "neanias/everforest-nvim",
         lazy = false,
         priority = 1000,
-        config = function ()
+        config = function()
             require("plugins.everforest")
+        end
+    },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        -- opts = {},
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify"
+        },
+        config = function()
+            require("plugins.noice")
         end
     }
 })
