@@ -28,7 +28,7 @@ local cmp_opts = {
         signature = { height = 25, width = 80, border = 'none' }
     },
     lsp_completion = {
-        source_func = 'omnifunc',
+        source_func = 'completefunc',
     }
 }
 
