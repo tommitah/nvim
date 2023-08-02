@@ -50,5 +50,6 @@
         "/home/tommitah/.local/share/nvim/lazy/gruvbox-baby/after",
         "${3rd}/OpenResty/library",
         "${3rd}/luassert/library"
-    ]
+    ],
+    "runtime.version": "LuaJIT"
 }

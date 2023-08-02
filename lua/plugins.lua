@@ -84,11 +84,11 @@ require("lazy").setup({
     ----------------------------------------------------------
     -- LSP (and completion and linters/formatters...)
     "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
+    -- "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/nvim-cmp",
-    "rafamadriz/friendly-snippets",
+    -- "rafamadriz/friendly-snippets",
     {
         "L3MON4D3/LuaSnip",
         build = "make install_jsregexp",
