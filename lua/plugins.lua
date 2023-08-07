@@ -27,12 +27,6 @@ require("lazy").setup({
         build =
         "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
     },
-    {
-        "jinh0/eyeliner.nvim",
-        config = function()
-            require("plugins.eyeliner")
-        end,
-    },
     -- ahem, not telescope but another finder
     -- {
     --     "jake-stewart/jfind.nvim",
@@ -42,6 +36,19 @@ require("lazy").setup({
     -- },
     -- /TELESCOPE
     "mbbill/undotree",
+    {
+        "echasnovski/mini.nvim",
+        version = false,
+        config = function()
+            require("plugins.mini")
+        end,
+    },
+    {
+        "jinh0/eyeliner.nvim",
+        config = function()
+            require("plugins.eyeliner")
+        end,
+    },
     {
         "nvim-treesitter/nvim-treesitter",
         config = function()
@@ -69,12 +76,12 @@ require("lazy").setup({
             require("gitsigns").setup()
         end,
     },
-    {
-        "tjdevries/express_line.nvim",
-        config = function()
-            require("plugins.express_line")
-        end,
-    },
+    -- {
+    --     "tjdevries/express_line.nvim",
+    --     config = function()
+    --         require("plugins.express_line")
+    --     end,
+    -- },
     "ThePrimeagen/harpoon",
     ---------------------------------------------------------
     ----------------------------------------------------------
@@ -214,12 +221,6 @@ require("lazy").setup({
         priority = 1000,
     },
     {
-        "echasnovski/mini.nvim",
-        config = function()
-            require("plugins.mini")
-        end,
-    },
-    {
         "Mofiqul/vscode.nvim",
         lazy = false,
         priority = 1000,
@@ -275,6 +276,24 @@ require("lazy").setup({
             require("plugins.everforest")
         end
     },
+    {
+        "danishprakash/vim-yami"
+    },
+    {
+        "alligator/accent.vim"
+    },
+    {
+        "olivercederborg/poimandres.nvim",
+        config = function()
+            require("poimandres").setup()
+        end
+    },
+    {
+        "tamton-aquib/staline.nvim",
+        config = function()
+            require("plugins.staline")
+        end
+    }
     -- {
     --     "folke/noice.nvim",
     --     event = "VeryLazy",

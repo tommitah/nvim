@@ -6,6 +6,13 @@ vim.g.forestbones = { transparent_background = true }
 vim.cmd([[ set background=dark]])
 vim.cmd.colorscheme 'forestbones'
 
+-- vim.cmd.colorscheme 'yami'
+
+-- vim.cmd.colorscheme 'poimandres'
+
+-- vim.g.accent_colour = 'yellow'
+-- vim.cmd.colorscheme 'accent'
+
 -- vim.cmd([[ set background=light ]])
 -- vim.cmd.colorscheme('minicyan')
 -- vim.cmd([[
