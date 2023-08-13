@@ -2,9 +2,9 @@
 -- vim.cmd.colorscheme 'zenbones'
 -- vim.cmd([[ set background=light ]])
 
-vim.g.forestbones = { transparent_background = true }
-vim.cmd([[ set background=dark]])
-vim.cmd.colorscheme 'forestbones'
+-- vim.g.forestbones = { transparent_background = true }
+-- vim.cmd([[ set background=dark]])
+-- vim.cmd.colorscheme 'forestbones'
 
 -- vim.cmd.colorscheme 'yami'
 
