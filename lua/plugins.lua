@@ -82,6 +82,14 @@ require("lazy").setup({
     --         require("plugins.express_line")
     --     end,
     -- },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function ()
+            -- require("lualine").setup()
+            require('plugins.lualine')
+        end
+    },
     "ThePrimeagen/harpoon",
     ---------------------------------------------------------
     ----------------------------------------------------------
@@ -288,12 +296,12 @@ require("lazy").setup({
             require("poimandres").setup()
         end
     },
-    {
-        "tamton-aquib/staline.nvim",
-        config = function()
-            require("plugins.staline")
-        end
-    }
+    -- {
+    --     "tamton-aquib/staline.nvim",
+    --     config = function()
+    --         require("plugins.staline")
+    --     end
+    -- }
     -- {
     --     "folke/noice.nvim",
     --     event = "VeryLazy",

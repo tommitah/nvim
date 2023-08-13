@@ -2,7 +2,7 @@ local indent_scope = require "mini.indentscope"
 local pairs = require "mini.pairs"
 local comment = require "mini.comment"
 local cmp = require "mini.completion"
-local tabline = require "mini.tabline"
+-- local tabline = require "mini.tabline"
 local cursorword = require "mini.cursorword"
 
 local indent_scope_opts = {
@@ -26,7 +26,7 @@ local cursorword_opts = {
 }
 local pairs_opts = {}
 local comment_opts = {}
-local tabline_opts = {}
+-- local tabline_opts = {}
 local cmp_opts = {
     window = {
         info = { height = 25, width = 80, border = 'none' },
@@ -41,5 +41,5 @@ indent_scope.setup(indent_scope_opts)
 pairs.setup(pairs_opts)
 comment.setup(comment_opts)
 cmp.setup(cmp_opts)
-tabline.setup(tabline_opts)
+-- tabline.setup(tabline_opts)
 cursorword.setup(cursorword_opts)

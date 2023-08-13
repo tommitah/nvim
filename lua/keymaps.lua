@@ -37,10 +37,11 @@ vim.keymap.set("n", "<leader>v", vim.cmd.NvimTreeToggle, opts)
 vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
 
 -- Gitsigns
-vim.keymap.set("n", "<leader>gn", ":Gitsigns next_hunk")
-vim.keymap.set("n", "<leader>gp", ":Gitsigns prev_hunk")
-vim.keymap.set("n", "<leader>gw", ":Gitsigns preview_hunk_inline")
-vim.keymap.set("n", "<leader>gf", ":Gitsigns diffthis")
+vim.keymap.set("n", "<leader>gn", ":Gitsigns next_hunk<cr>")
+vim.keymap.set("n", "<leader>gp", ":Gitsigns prev_hunk<cr>")
+vim.keymap.set("n", "<leader>gw", ":Gitsigns preview_hunk_inline<cr>")
+vim.keymap.set("n", "<leader>gf", ":Gitsigns diffthis<cr>")
+vim.keymap.set("n", "<leader>gb", ":Gitsigns blame_line<cr>")
 
 -- Harpoon
 keymap("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
