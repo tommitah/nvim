@@ -1,4 +1,5 @@
 vim.loader.enable()
+vim.g.rustfmt_autosave = 1
 vim.opt.termguicolors = true
 vim.opt.splitright = true
 vim.opt.completeopt = "menuone,noinsert,noselect"
@@ -21,9 +22,9 @@ vim.opt.listchars:append("space:⋅")
 -- vim.opt.listchars:append("eol:↴")
 
 vim.opt.scrolloff = 8
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- vimscript sadness...
