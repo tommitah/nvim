@@ -70,6 +70,12 @@ vim.keymap.set("n", "<C-3>", ":DapStepInto<cr>", opts)
 vim.keymap.set("n", "<C-4>", ":DapStepOut<cr>", opts)
 vim.keymap.set("n", "<C-5>", ":DapStepOver<cr>", opts)
 
+-- spectre
+vim.keymap.set("n", "<leader>S", "<cmd>lua require(\"spectre\").toggle()<cr>", opts)
+vim.keymap.set("n", "<leader>sw", "<cmd>lua require(\"spectre\").open_visual({select_word=true})<cr>", opts)
+vim.keymap.set("v", "<leader>sw", "<cmd>lua require(\"spectre\").open_visual()<cr>", opts)
+vim.keymap.set("n", "<leader>sp", "<cmd>lua require(\"spectre\").open_file_search({select_word=true})<cr>", opts)
+
 -- LSP toggle formatting on save
 -- NOTE: lsp formatting on save is fucking slow with null_ls, so don't use it on save
 -- keymap("n", "<leader><C-f>", ":LspToggleAutoFormat<cr>", opts)

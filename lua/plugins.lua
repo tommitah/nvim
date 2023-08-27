@@ -15,6 +15,13 @@ require("lazy").setup({
     -- necessities, QOL
     -- TELESCOPE
     {
+        "stevearc/oil.nvim",
+        opts = {},
+        config = function()
+            require("plugins.oil")
+        end,
+    },
+    {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
@@ -27,15 +34,9 @@ require("lazy").setup({
         build =
         "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
     },
-    -- ahem, not telescope but another finder
-    -- {
-    --     "jake-stewart/jfind.nvim",
-    --     config = function()
-    --         require("plugins.jfind")
-    --     end,
-    -- },
     -- /TELESCOPE
     "mbbill/undotree",
+    "nvim-pack/nvim-spectre",
     {
         "echasnovski/mini.nvim",
         version = false,
@@ -56,14 +57,8 @@ require("lazy").setup({
         end,
     },
     "nvim-treesitter/nvim-treesitter-context",
-    -- "nvim-treesitter/playground",
-    -- "nvim-treesitter/refactor",
-    {
-        "windwp/nvim-ts-autotag",
-        config = function()
-            require("plugins.autotag")
-        end
-    },
+    -- NOTE: works with treesitter, so no setup!
+    "windwp/nvim-ts-autotag",
     {
         "kylechui/nvim-surround",
         config = function()
@@ -76,20 +71,6 @@ require("lazy").setup({
             require("gitsigns").setup()
         end,
     },
-    -- {
-    --     "tjdevries/express_line.nvim",
-    --     config = function()
-    --         require("plugins.express_line")
-    --     end,
-    -- },
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function ()
-            -- require("lualine").setup()
-            require('plugins.lualine')
-        end
-    },
     "ThePrimeagen/harpoon",
     ---------------------------------------------------------
     ----------------------------------------------------------
@@ -98,18 +79,10 @@ require("lazy").setup({
     ----------------------------------------------------------
     ----------------------------------------------------------
     -- LSP (and completion and linters/formatters...)
-    -- "hrsh7th/cmp-nvim-lsp",
-    -- -- "hrsh7th/cmp-buffer",
-    -- "hrsh7th/cmp-path",
-    -- "hrsh7th/cmp-cmdline",
-    -- "hrsh7th/nvim-cmp",
-    -- -- "rafamadriz/friendly-snippets",
-    -- {
-    --     "L3MON4D3/LuaSnip",
-    --     build = "make install_jsregexp",
-    --     dependencies = { "rafamadriz/friendly-snippets" },
-    -- },
-    -- "saadparwaiz1/cmp_luasnip",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/nvim-cmp",
     {
         "williamboman/mason.nvim",
         config = function()
@@ -123,12 +96,6 @@ require("lazy").setup({
         end,
     },
     "neovim/nvim-lspconfig",
-    {
-        "mfussenegger/nvim-lint",
-        config = function()
-            require("plugins.lint")
-        end
-    },
     {
         "pmizio/typescript-tools.nvim",
         dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
@@ -150,9 +117,6 @@ require("lazy").setup({
         config = function()
             require("plugins.rust")
         end,
-    },
-    {
-        "mfussenegger/nvim-dap",
     },
     {
         "ray-x/lsp_signature.nvim",
@@ -193,20 +157,6 @@ require("lazy").setup({
     ----------------------------------------------------------
     ----------------------------------------------------------
     -- visual/cosmetic plugins
-    -- {
-    --     "j-hui/fidget.nvim",
-    --     tag = "legacy",
-    --     config = function()
-    --         require("fidget").setup()
-    --     end,
-    -- },
-    {
-        "stevearc/oil.nvim",
-        opts = {},
-        config = function()
-            require("plugins.oil")
-        end,
-    },
     {
         "rebelot/kanagawa.nvim",
         lazy = false,
@@ -215,16 +165,6 @@ require("lazy").setup({
     {
         "lalitmee/cobalt2.nvim",
         dependencies = { "tjdevries/colorbuddy.nvim" },
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "calind/selenized.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "ellisonleao/gruvbox.nvim",
         lazy = false,
         priority = 1000,
     },
@@ -250,28 +190,10 @@ require("lazy").setup({
         end,
     },
     {
-        "catppuccin/nvim",
-        config = function()
-            require("plugins.catppuccin")
-        end,
-    },
-    {
-        "ramojus/mellifluous.nvim",
-        config = function()
-            require("plugins.mellifluous")
-        end,
-    },
-    {
         "maxmx03/solarized.nvim",
         config = function()
             require("plugins.solarized")
         end,
-    },
-    {
-        "projekt0n/github-nvim-theme",
-        config = function()
-            require("plugins.github-theme")
-        end
     },
     {
         "projekt0n/caret.nvim",
@@ -285,33 +207,12 @@ require("lazy").setup({
         end
     },
     {
-        "danishprakash/vim-yami"
-    },
-    {
         "alligator/accent.vim"
     },
     {
-        "olivercederborg/poimandres.nvim",
-        config = function()
-            require("poimandres").setup()
-        end
+        "dotsilas/darcubox-nvim"
     },
-    -- {
-    --     "tamton-aquib/staline.nvim",
-    --     config = function()
-    --         require("plugins.staline")
-    --     end
-    -- }
-    -- {
-    --     "folke/noice.nvim",
-    --     event = "VeryLazy",
-    --     -- opts = {},
-    --     dependencies = {
-    --         "MunifTanjim/nui.nvim",
-    --         "rcarriga/nvim-notify"
-    --     },
-    --     config = function()
-    --         require("plugins.noice")
-    --     end
-    -- }
+    {
+        "Verf/deepwhite.nvim"
+    }
 })

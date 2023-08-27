@@ -1,20 +1,3 @@
--- vim.g.zenbones = { lightness = "dim", transparent_background = true }
--- vim.cmd.colorscheme 'zenbones'
--- vim.cmd([[ set background=light ]])
-
--- vim.g.forestbones = { transparent_background = true }
--- vim.cmd([[ set background=dark]])
--- vim.cmd.colorscheme 'forestbones'
-
--- vim.cmd.colorscheme 'yami'
-
--- vim.cmd.colorscheme 'poimandres'
-
--- vim.g.accent_colour = 'yellow'
--- vim.cmd.colorscheme 'accent'
-
--- vim.cmd([[ set background=light ]])
--- vim.cmd.colorscheme('minicyan')
 -- vim.cmd([[
 -- if !exists('g:neovide')
 -- 	hi Normal guibg=NONE ctermbg=NONE
@@ -23,46 +6,27 @@
 -- 	hi EndOfBuffer guibg=NONE ctermbg=NONE
 -- end
 -- ]])
--- vim.cmd.colorscheme('minischeme')
--- vim.cmd([[ set background=dark ]])
+vim.g.zenbones = { lightness = "dim", transparent_background = true }
+vim.cmd.colorscheme 'zenbones'
+vim.cmd([[ set background=light ]])
 
+-- vim.g.forestbones = { transparent_background = true }
+-- vim.cmd.colorscheme 'forestbones'
+
+-- vim.g.accent_colour = 'yellow'
+-- vim.cmd.colorscheme 'accent'
+
+-- vim.cmd.colorscheme('minicyan')
+-- vim.cmd.colorscheme('minischeme')
 -- vim.cmd.colorscheme 'neobones'
 -- vim.cmd.colorscheme 'tokyobones'
 -- vim.cmd.colorscheme 'duckbones'
-
 -- vim.cmd.colorscheme("spaceduck")
-
 -- vim.cmd.colorscheme("oxocarbon")
-
 -- vim.cmd.colorscheme("moonfly")
-
--- vim.cmd([[
--- let g:pyramid_transparent_mode = 0
--- let g:telescope_theme = 1
--- let g:variable_style = "NONE"
--- let g:function_style = "bold"
--- ]])
--- vim.cmd([[ colorscheme pyramid ]])
 
 -- require("plugins.nordic_theme")
 -- require("nordic").load()
-
--- "luisiacc/gruvbox-baby",
--- vim.cmd.colorscheme('gruvbox-baby')
--- "ramojus/mellifluous.nvim",
--- require("mellifluous").setup({
--- 	color_set = "alduin",
--- 	-- color_set = "mellifluous",
--- 	-- color_set = "mountain",
--- 	-- color_set = "tender",
--- })
--- vim.cmd.colorscheme("mellifluous")
--- "lewpoly/sherbet.nvim",
--- vim.cmd.colorscheme("sherbet")
-
--- require("neosolarized").setup({
--- 	background_set = false,
--- })
 
 -- require("colorbuddy").colorscheme('cobalt2')
 
@@ -82,39 +46,11 @@
 -- require("plugins.rose_pine")
 -- vim.cmd.colorscheme("rose-pine")
 
--- vim.cmd.colorscheme("tokyonight-night")
--- vim.cmd.colorscheme("tokyonight-storm")
--- vim.cmd.colorscheme("tokyonight-day")
--- vim.cmd.colorscheme("tokyonight-moon")
-
--- require("plugins.gruvbox")
--- vim.cmd.colorscheme("gruvbox")
-
 -- require("plugins.kanagawa")
 -- vim.cmd.colorscheme("kanagawa")
 
--- github theme
--- vim.cmd.colorscheme("github_dark_colorblind")
-
--- vim.cmd.colorscheme("mellifluous")
-
--- vim.cmd.colorscheme("danger_dark")
-
--- vim.cmd.colorscheme("catppuccin")
-
--- vim.cmd([[ colorscheme alduin ]])
--- vim.cmd([[ colorscheme despacio ]])
--- vim.cmd[[ let loaded_matchparen = 1 ]]
-
--- vim.cmd([[
--- if !exists('g:neovide')
--- 	hi Normal guibg=NONE ctermbg=NONE
--- 	hi LineNr guibg=NONE ctermbg=NONE
--- 	hi SignColumn guibg=NONE ctermbg=NONE
--- 	hi EndOfBuffer guibg=NONE ctermbg=NONE
--- end
--- ]])
---
+-- vim.cmd.colorscheme "darcubox"
+-- vim.cmd.colorscheme 'caret'
 
 -- local links = {
 --   ['@lsp.type.namespace'] = '@namespace',

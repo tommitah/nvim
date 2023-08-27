@@ -7,4 +7,4 @@ everforest.setup({
     ui_contrast = "high",
 })
 
-everforest.load()
+-- everforest.load()
