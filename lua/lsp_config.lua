@@ -30,24 +30,11 @@ M.setup = function()
             prefix = "",
         },
     })
-
-    -- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-    -- 	border = 'rounded'
-    -- })
-    --
-    -- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    -- 	border = 'rounded'
-    -- })
 end
 
 M.on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true, buffer = bufnr }
-    -- vim.keymap.set("n", "rr", function()
-    -- 	return ":IncRename " .. vim.fn.expand("<cword>")
-    -- end, { expr = true })
     vim.keymap.set("n", "gD", "<cmd>Lspsaga peek_definition<CR>", opts)
-    -- vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<cr>", opts)
-    -- vim.keymap.set("n", "rr", "<cmd>Lspsaga rename<CR>", opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>fr", "<cmd>Lspsaga lsp_finder<CR>", opts)
     vim.keymap.set("n", "gI", vim.lsp.buf.implementation, opts)
@@ -56,21 +43,17 @@ M.on_attach = function(client, bufnr)
     vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
     vim.keymap.set("n", "<leader>q", ":TroubleToggle<CR>", opts)
     vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
-
-    -- virtual text shows types
-    -- require("virtualtypes").on_attach()
 end
 
 -- FOR CMP
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 
--- local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
--- if not status_ok then
---     return
--- end
---
--- M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not status_ok then
+    return
+end
+
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 function M.enable_format_on_save()
     vim.cmd([[

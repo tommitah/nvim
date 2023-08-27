@@ -23,22 +23,6 @@ require("lspconfig").lua_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
 })
--- require("lspconfig").hls.setup({
---     on_attach = on_attach,
---     capabilities = capabilities,
--- })
--- require("lspconfig").tailwindcss.setup({
---     on_attach = on_attach,
---     capabilities = capabilities,
--- })
--- require("lspconfig").eslint.setup({
---     on_attach = function(client, bufnr)
---         vim.api.nvim_create_autocmd("BufWritePre", {
---             buffer = bufnr,
---             command = "EslintFixAll",
---         })
---     end
--- })
 require("lspconfig").jsonls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
