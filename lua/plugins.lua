@@ -65,6 +65,13 @@ require("lazy").setup({
         end
     },
     {
+        "kevinhwang91/nvim-ufo",
+        dependencies = "kevinhwang91/promise-async",
+        config = function ()
+          require("plugins.ufo")
+        end
+    },
+    {
         "kylechui/nvim-surround",
         config = function()
             require("nvim-surround").setup()
@@ -82,14 +89,14 @@ require("lazy").setup({
     --         require("plugins.express_line")
     --     end,
     -- },
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function ()
-            -- require("lualine").setup()
-            require('plugins.lualine')
-        end
-    },
+    -- {
+    --     'nvim-lualine/lualine.nvim',
+    --     dependencies = { 'nvim-tree/nvim-web-devicons' },
+    --     config = function ()
+    --         -- require("lualine").setup()
+    --         require('plugins.lualine')
+    --     end
+    -- },
     "ThePrimeagen/harpoon",
     ---------------------------------------------------------
     ----------------------------------------------------------
@@ -98,18 +105,18 @@ require("lazy").setup({
     ----------------------------------------------------------
     ----------------------------------------------------------
     -- LSP (and completion and linters/formatters...)
-    -- "hrsh7th/cmp-nvim-lsp",
-    -- -- "hrsh7th/cmp-buffer",
-    -- "hrsh7th/cmp-path",
-    -- "hrsh7th/cmp-cmdline",
-    -- "hrsh7th/nvim-cmp",
-    -- -- "rafamadriz/friendly-snippets",
-    -- {
-    --     "L3MON4D3/LuaSnip",
-    --     build = "make install_jsregexp",
-    --     dependencies = { "rafamadriz/friendly-snippets" },
-    -- },
-    -- "saadparwaiz1/cmp_luasnip",
+    "hrsh7th/cmp-nvim-lsp",
+    -- "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/nvim-cmp",
+    -- "rafamadriz/friendly-snippets",
+    {
+        "L3MON4D3/LuaSnip",
+        build = "make install_jsregexp",
+        dependencies = { "rafamadriz/friendly-snippets" },
+    },
+    "saadparwaiz1/cmp_luasnip",
     {
         "williamboman/mason.nvim",
         config = function()
@@ -150,9 +157,6 @@ require("lazy").setup({
         config = function()
             require("plugins.rust")
         end,
-    },
-    {
-        "mfussenegger/nvim-dap",
     },
     {
         "ray-x/lsp_signature.nvim",

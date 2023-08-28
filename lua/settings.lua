@@ -26,6 +26,11 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
+-- vim.o.foldcolumn = '1' -- '0' is not bad
+-- vim.o.foldlevel = 20 -- Using ufo provider need a large value, feel free to decrease the value
+-- vim.o.foldlevelstart = 2
+-- vim.o.foldenable = true
+
 -- vimscript sadness...
 vim.cmd([[
 	let g:neovide_refresh_rate=140

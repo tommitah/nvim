@@ -1,6 +1,6 @@
--- vim.g.zenbones = { lightness = "dim", transparent_background = true }
--- vim.cmd.colorscheme 'zenbones'
--- vim.cmd([[ set background=light ]])
+vim.g.zenbones = { lightness = "dim", transparent_background = true }
+vim.cmd.colorscheme 'zenbones'
+vim.cmd([[ set background=light ]])
 
 -- vim.g.forestbones = { transparent_background = true }
 -- vim.cmd([[ set background=dark]])
@@ -44,7 +44,7 @@
 -- ]])
 -- vim.cmd([[ colorscheme pyramid ]])
 
--- require("plugins.nordic_theme")
+-- require("plugins.nordic")
 -- require("nordic").load()
 
 -- "luisiacc/gruvbox-baby",

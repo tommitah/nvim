@@ -26,6 +26,7 @@ vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
 vim.keymap.set("n", "gi", builtin.lsp_implementations, opts)
 vim.keymap.set("n", "gr", builtin.lsp_references, opts)
 vim.keymap.set("n", "<leader>cs", builtin.colorscheme, opts)
+vim.keymap.set("n", "<leader>bb", builtin.buffers, opts)
 -- vim.keymap.set("n", "<C-n>", ":Telescope file_browser<cr>", opts)
 -- vim.keymap.set("n", "<leader>nn", ":Telescope file_browser<cr>", opts)
 
@@ -69,6 +70,10 @@ vim.keymap.set("n", "<C-s>", open_debug_ui, opts)
 vim.keymap.set("n", "<C-3>", ":DapStepInto<cr>", opts)
 vim.keymap.set("n", "<C-4>", ":DapStepOut<cr>", opts)
 vim.keymap.set("n", "<C-5>", ":DapStepOver<cr>", opts)
+
+-- fold
+vim.keymap.set('n', 'zO', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zC', require('ufo').closeAllFolds)
 
 -- LSP toggle formatting on save
 -- NOTE: lsp formatting on save is fucking slow with null_ls, so don't use it on save
