@@ -1,6 +1,7 @@
 require("lsp_config").setup()
 local on_attach = require("lsp_config").on_attach
 local capabilities = require("lsp_config").capabilities
+local coq = require("coq")
 
 local opts = {
     server = {
@@ -11,7 +12,8 @@ local opts = {
         inlay_hints = {
             auto = false,
         },
-    }
+    },
+    coq.lsp_ensure_capabilities({})
 }
 
 
