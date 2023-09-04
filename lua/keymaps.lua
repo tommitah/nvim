@@ -8,6 +8,9 @@ vim.g.maplocalleader = " "
 -- VISUAL MODE: Move highlighted text block
 vim.keymap.set("v", "<C-J>", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "<C-K>", ":m '>-2<CR>gv=gv", opts)
+-- stay in visual mode when indenting
+vim.keymap.set("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
 
 -- TELESCOPE
 local builtin = require("telescope.builtin")
@@ -19,7 +22,7 @@ vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
 vim.keymap.set("n", "gi", builtin.lsp_implementations, opts)
 vim.keymap.set("n", "gr", builtin.lsp_references, opts)
 vim.keymap.set("n", "<leader>cs", builtin.colorscheme, opts)
-vim.keymap.set("n", "<leader>bu", builtin.buffers, opts)
+vim.keymap.set("n", "<leader>bb", builtin.buffers, opts)
 
 -- undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)

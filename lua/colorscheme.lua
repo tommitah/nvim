@@ -6,9 +6,9 @@
 -- 	hi EndOfBuffer guibg=NONE ctermbg=NONE
 -- end
 -- ]])
-vim.g.zenbones = { lightness = "dim", transparent_background = true }
-vim.cmd.colorscheme 'zenbones'
-vim.cmd([[ set background=light ]])
+-- vim.g.zenbones = { lightness = "dim", transparent_background = true }
+-- vim.cmd.colorscheme 'zenbones'
+-- vim.cmd([[ set background=light ]])
 
 -- vim.g.forestbones = { transparent_background = true }
 -- vim.cmd.colorscheme 'forestbones'
@@ -25,8 +25,8 @@ vim.cmd([[ set background=light ]])
 -- vim.cmd.colorscheme("oxocarbon")
 -- vim.cmd.colorscheme("moonfly")
 
--- require("plugins.nordic_theme")
--- require("nordic").load()
+require("plugins.nordic_theme")
+require("nordic").load()
 
 -- require("colorbuddy").colorscheme('cobalt2')
 

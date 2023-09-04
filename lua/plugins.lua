@@ -29,6 +29,7 @@ require("lazy").setup({
         end,
     },
     "nvim-telescope/telescope-ui-select.nvim",
+    "nvim-telescope/telescope-github.nvim",
     {
         "nvim-telescope/telescope-fzf-native.nvim",
         build =
@@ -72,17 +73,16 @@ require("lazy").setup({
         end,
     },
     "ThePrimeagen/harpoon",
-    ---------------------------------------------------------
-    ----------------------------------------------------------
-    ----------------------------------------------------------
-    ----------------------------------------------------------
-    ----------------------------------------------------------
-    ----------------------------------------------------------
     -- LSP (and completion and linters/formatters...)
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-cmdline",
-    "hrsh7th/nvim-cmp",
+    {
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+        }
+    },
     {
         "williamboman/mason.nvim",
         config = function()
