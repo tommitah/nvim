@@ -34,9 +34,7 @@ end
 
 M.on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true, buffer = bufnr }
-    vim.keymap.set("n", "gD", "<cmd>Lspsaga peek_definition<CR>", opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "<leader>fr", "<cmd>Lspsaga lsp_finder<CR>", opts)
     vim.keymap.set("n", "gI", vim.lsp.buf.implementation, opts)
     vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
     vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
@@ -45,15 +43,15 @@ M.on_attach = function(client, bufnr)
     vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
 end
 
--- FOR CMP
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-    return
-end
-
-M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+-- -- FOR CMP
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+--
+-- local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+-- if not status_ok then
+--     return
+-- end
+--
+-- M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 function M.enable_format_on_save()
     vim.cmd([[

@@ -74,14 +74,22 @@ require("lazy").setup({
     },
     "ThePrimeagen/harpoon",
     -- LSP (and completion and linters/formatters...)
+    -- {
+    --     "hrsh7th/nvim-cmp",
+    --     event = "InsertEnter",
+    --     dependencies = {
+    --         "hrsh7th/cmp-nvim-lsp",
+    --         "hrsh7th/cmp-path",
+    --         "hrsh7th/cmp-cmdline",
+    --     }
+    -- },
     {
-        "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
-        dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-path",
-            "hrsh7th/cmp-cmdline",
-        }
+        "ms-jpq/coq_nvim",
+        branch = "coq"
+    },
+    {
+        "ms-jpq/coq.artifacts",
+        branch = "artifacts"
     },
     {
         "williamboman/mason.nvim",
