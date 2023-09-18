@@ -15,7 +15,9 @@ vim.keymap.set("v", ">", ">gv", opts)
 -- FZF lua
 local fzf_lua = require("fzf-lua")
 vim.keymap.set("n", "<leader>ff", fzf_lua.files, opts)
-vim.keymap.set("n", "<leader>fg", fzf_lua.grep, opts)
+vim.keymap.set("n", "<leader>fg", fzf_lua.live_grep, opts)
+vim.keymap.set("n", "<leader>f*", fzf_lua.grep_cword, opts)
+vim.keymap.set({ "n", "v" }, "<leader>fv", fzf_lua.grep_visual, opts)
 vim.keymap.set("n", "<leader>bb", fzf_lua.buffers ,opts)
 vim.keymap.set("n", "<leader>.", fzf_lua.quickfix, opts)
 
