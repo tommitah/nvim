@@ -22,19 +22,28 @@ require("lazy").setup({
         end,
     },
     {
-        "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        "ibhagwan/fzf-lua",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
         config = function()
-            require("plugins.telescope")
-        end,
+            require("fzf-lua").setup()
+        end
     },
-    "nvim-telescope/telescope-ui-select.nvim",
-    "nvim-telescope/telescope-github.nvim",
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build =
-        "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
-    },
+    -- {
+    --     "nvim-telescope/telescope.nvim",
+    --     dependencies = { "nvim-lua/plenary.nvim" },
+    --     config = function()
+    --         require("plugins.telescope")
+    --     end,
+    -- },
+    -- "nvim-telescope/telescope-ui-select.nvim",
+    -- "nvim-telescope/telescope-github.nvim",
+    -- {
+    --     "nvim-telescope/telescope-fzf-native.nvim",
+    --     build =
+    --     "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+    -- },
     -- /TELESCOPE
     "mbbill/undotree",
     "nvim-pack/nvim-spectre",
@@ -45,6 +54,10 @@ require("lazy").setup({
             require("plugins.mini")
         end,
     },
+    -- requires, 0.10.0, gives lsp/context breadcrumbs. could replace treesitter-context
+    -- {
+    --     "Bekaboo/dropbar.nvim"
+    -- },
     {
         "jinh0/eyeliner.nvim",
         config = function()
