@@ -12,6 +12,7 @@ vim.opt.cursorline = true
 vim.opt.number = true
 -- vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes:1"
+-- vim.opt.cmdheight = 0
 
 -- this is for the dots in tab and line endings
 vim.opt.list = true

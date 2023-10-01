@@ -6,6 +6,7 @@ require("mason-lspconfig").setup({
         "tailwindcss",
         "jsonls",
         "rust_analyzer",
+        "gopls"
     },
 })
 
@@ -39,7 +40,17 @@ require("lspconfig").lua_ls.setup({
     capabilities = capabilities,
     coq.lsp_ensure_capabilities()
 })
+require("lspconfig").clangd.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    coq.lsp_ensure_capabilities()
+})
 require("lspconfig").jsonls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    coq.lsp_ensure_capabilities()
+})
+require("lspconfig").gopls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     coq.lsp_ensure_capabilities()
@@ -114,12 +125,3 @@ vim.cmd('COQnow -s')
 --         select = false,
 --     },
 -- })
-
-require("lsp_signature").setup({
-    bind = true,
-    hint_prefix = "$ ",
-    floating_window = false,
-    handler_opts = {
-        border = "rounded",
-    },
-})
