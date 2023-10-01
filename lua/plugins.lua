@@ -13,7 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     -- necessities, QOL
-    -- TELESCOPE
+    {
+        "sindrets/diffview.nvim"
+    },
     {
         "stevearc/oil.nvim",
         opts = {},
@@ -22,20 +24,16 @@ require("lazy").setup({
         end,
     },
     {
-        "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        "ibhagwan/fzf-lua",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
         config = function()
-            require("plugins.telescope")
-        end,
+            require("fzf-lua").setup({
+                winopts = { preview = { hidden = "hidden" } }
+            })
+        end
     },
-    "nvim-telescope/telescope-ui-select.nvim",
-    "nvim-telescope/telescope-github.nvim",
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build =
-        "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
-    },
-    -- /TELESCOPE
     "mbbill/undotree",
     "nvim-pack/nvim-spectre",
     {
@@ -45,6 +43,10 @@ require("lazy").setup({
             require("plugins.mini")
         end,
     },
+    -- requires, 0.10.0, gives lsp/context breadcrumbs. could replace treesitter-context
+    -- {
+    --     "Bekaboo/dropbar.nvim"
+    -- },
     {
         "jinh0/eyeliner.nvim",
         config = function()
@@ -61,6 +63,12 @@ require("lazy").setup({
     -- NOTE: works with treesitter, so no setup!
     "windwp/nvim-ts-autotag",
     {
+        "windwp/nvim-autopairs",
+        config = function()
+            require("nvim-autopairs").setup()
+        end
+    },
+    {
         "kylechui/nvim-surround",
         config = function()
             require("nvim-surround").setup()
@@ -73,16 +81,16 @@ require("lazy").setup({
         end,
     },
     "ThePrimeagen/harpoon",
-    -- LSP (and completion and linters/formatters...)
-    -- {
-    --     "hrsh7th/nvim-cmp",
-    --     event = "InsertEnter",
-    --     dependencies = {
-    --         "hrsh7th/cmp-nvim-lsp",
-    --         "hrsh7th/cmp-path",
-    --         "hrsh7th/cmp-cmdline",
-    --     }
-    -- },
+    {
+        "ThePrimeagen/refactoring.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        config = function()
+            require("refactoring").setup()
+        end
+    },
     {
         "ms-jpq/coq_nvim",
         branch = "coq"
@@ -125,9 +133,6 @@ require("lazy").setup({
         config = function()
             require("plugins.rust")
         end,
-    },
-    {
-        "ray-x/lsp_signature.nvim",
     },
     -- </RUST>
     {
@@ -177,6 +182,15 @@ require("lazy").setup({
         priority = 1000,
     },
     {
+        "tjdevries/gruvbuddy.nvim",
+        dependencies = { "tjdevries/colorbuddy.nvim" },
+        lazy = false,
+        priority = 1000
+    },
+    {
+        "ray-x/starry.nvim"
+    },
+    {
         "Mofiqul/vscode.nvim",
         lazy = false,
         priority = 1000,
@@ -185,6 +199,14 @@ require("lazy").setup({
         "AlexvZyl/nordic.nvim",
         lazy = false,
         priority = 1000,
+    },
+    {
+        "nyoom-engineering/oxocarbon.nvim",
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000
     },
     {
         "mcchrish/zenbones.nvim",
@@ -198,10 +220,7 @@ require("lazy").setup({
         end,
     },
     {
-        "maxmx03/solarized.nvim",
-        config = function()
-            require("plugins.solarized")
-        end,
+        "svrana/neosolarized.nvim",
     },
     {
         "projekt0n/caret.nvim",
@@ -222,5 +241,15 @@ require("lazy").setup({
     },
     {
         "Verf/deepwhite.nvim"
+    },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "MunifTanjim/nui.nvim"
+        },
+        config = function ()
+            require('plugins.noice')
+        end
     }
 })

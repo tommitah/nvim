@@ -13,6 +13,18 @@
 -- vim.g.forestbones = { transparent_background = true }
 -- vim.cmd.colorscheme 'forestbones'
 
+-- require("colorbuddy").colorscheme("gruvbuddy")
+
+-- vim.g.starry_disable_background = true
+-- vim.cmd.colorscheme "darksolar"
+-- require("neosolarized").setup({
+--     background_set = false,
+-- })
+-- vim.cmd.colorscheme("oxocarbon")
+
+require("plugins.tokyonight")
+vim.cmd.colorscheme "tokyonight"
+
 -- vim.g.accent_colour = 'yellow'
 -- vim.cmd.colorscheme 'accent'
 
@@ -22,11 +34,10 @@
 -- vim.cmd.colorscheme 'tokyobones'
 -- vim.cmd.colorscheme 'duckbones'
 -- vim.cmd.colorscheme("spaceduck")
--- vim.cmd.colorscheme("oxocarbon")
 -- vim.cmd.colorscheme("moonfly")
 
-require("plugins.nordic_theme")
-require("nordic").load()
+-- require("plugins.nordic_theme")
+-- require("nordic").load()
 
 -- require("colorbuddy").colorscheme('cobalt2')
 

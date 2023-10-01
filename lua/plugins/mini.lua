@@ -1,9 +1,10 @@
 local indent_scope = require "mini.indentscope"
 local pairs = require "mini.pairs"
 local comment = require "mini.comment"
+-- local files = require "mini.files"
 -- local cmp = require "mini.completion"
-local tabline = require "mini.tabline"
-local cursorword = require "mini.cursorword"
+-- local tabline = require "mini.tabline"
+-- local cursorword = require "mini.cursorword"
 local statusline = require "mini.statusline"
 
 local statusline_opts = {}
@@ -23,12 +24,12 @@ local indent_scope_opts = {
     },
     symbol = "|",
 }
-local cursorword_opts = {
-    delay = 3000
-}
+-- local cursorword_opts = {
+--     delay = 3000
+-- }
 local pairs_opts = {}
 local comment_opts = {}
-local tabline_opts = {}
+-- local tabline_opts = {}
 -- local cmp_opts = {
 --     window = {
 --         info = { height = 25, width = 80, border = 'none' },
@@ -44,5 +45,6 @@ indent_scope.setup(indent_scope_opts)
 pairs.setup(pairs_opts)
 comment.setup(comment_opts)
 -- cmp.setup(cmp_opts)
-tabline.setup(tabline_opts)
-cursorword.setup(cursorword_opts)
+-- tabline.setup(tabline_opts)
+-- cursorword.setup(cursorword_opts)
+-- files.setup()

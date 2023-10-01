@@ -12,17 +12,28 @@ vim.keymap.set("v", "<C-K>", ":m '>-2<CR>gv=gv", opts)
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 
+-- FZF lua
+local fzf_lua = require("fzf-lua")
+vim.keymap.set("n", "<leader>ff", fzf_lua.files, opts)
+vim.keymap.set("n", "<leader>fg", fzf_lua.live_grep, opts)
+vim.keymap.set("n", "<leader>f*", fzf_lua.grep_cword, opts)
+vim.keymap.set("n", "gD", fzf_lua.lsp_definitions, opts)
+vim.keymap.set("n", "gr", fzf_lua.lsp_references, opts)
+vim.keymap.set({ "n", "v" }, "<leader>fv", fzf_lua.grep_visual, opts)
+vim.keymap.set("n", "<leader>bb", fzf_lua.buffers ,opts)
+vim.keymap.set("n", "<leader>.", fzf_lua.quickfix, opts)
+
 -- TELESCOPE
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, opts)
-vim.keymap.set("n", "<leader>cc", builtin.commands, opts)
-vim.keymap.set("n", "<leader>.", builtin.quickfix, opts)
-vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
-vim.keymap.set("n", "gi", builtin.lsp_implementations, opts)
-vim.keymap.set("n", "gr", builtin.lsp_references, opts)
-vim.keymap.set("n", "<leader>cs", builtin.colorscheme, opts)
-vim.keymap.set("n", "<leader>bb", builtin.buffers, opts)
+-- local builtin = require("telescope.builtin")
+-- vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
+-- vim.keymap.set("n", "<leader>fg", builtin.live_grep, opts)
+-- vim.keymap.set("n", "<leader>cc", builtin.commands, opts)
+-- vim.keymap.set("n", "<leader>.", builtin.quickfix, opts)
+-- vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
+-- vim.keymap.set("n", "gi", builtin.lsp_implementations, opts)
+-- vim.keymap.set("n", "gr", builtin.lsp_references, opts)
+-- vim.keymap.set("n", "<leader>cs", builtin.colorscheme, opts)
+-- vim.keymap.set("n", "<leader>bb", builtin.buffers, opts)
 
 -- undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
@@ -42,9 +53,18 @@ vim.keymap.set("n", "<leader>7", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>
 vim.keymap.set("n", "<leader>8", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", opts)
 vim.keymap.set("n", "<leader>9", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts)
 vim.keymap.set("n", "<leader>0", "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", opts)
+-- refactoring
+vim.keymap.set("x", "<leader>re", ":Refactor extract ", opts)
+vim.keymap.set("x", "<leader>rf", ":Refactor extract_to_file ", opts)
+vim.keymap.set("x", "<leader>rv", ":Refactor extract_var ", opts)
+vim.keymap.set({ "n", "x" }, "<leader>ri", ":Refactor inline_var", opts)
+vim.keymap.set("n", "<leader>rI", ":Refactor inline_func", opts)
+vim.keymap.set("n", "<leader>rb", ":Refactor extract_block")
+vim.keymap.set("n", "<leader>rbf", ":Refactor extract_block_to_file")
 
 -- OIL
 vim.keymap.set("n", "-", "<cmd>Oil<cr>", opts)
+vim.keymap.set("n", "<leader>-", "<cmd>lua MiniFiles.open()<cr>", opts)
 
 -- Inc-rename
 vim.keymap.set("n", "rr", function()
