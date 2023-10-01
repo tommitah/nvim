@@ -8,6 +8,7 @@
   "crates.nvim": { "branch": "main", "commit": "7e0e24b5c28c9fababf2b965f5840e6867c96848" },
   "darcubox-nvim": { "branch": "main", "commit": "cba3bbd191f713decb6f79660ade428ef2d6ef50" },
   "deepwhite.nvim": { "branch": "main", "commit": "49f2edaba7552178570f8198e9c0f2d4ca960b05" },
+  "diffview.nvim": { "branch": "main", "commit": "a111d19ccceac6530448d329c63f998f77b5626e" },
   "everforest-nvim": { "branch": "main", "commit": "64f290dd2d00ae54132589b55bf9454370eb7cd8" },
   "eyeliner.nvim": { "branch": "main", "commit": "c540d58bf52aa979d4cca639c60387ae0c0ccf88" },
   "fzf-lua": { "branch": "main", "commit": "f4091b9fa05ae6c2eab2823c0b345be2a27208c6" },

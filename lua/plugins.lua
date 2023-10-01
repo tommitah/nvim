@@ -14,6 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     -- necessities, QOL
     {
+        "sindrets/diffview.nvim"
+    },
+    {
         "stevearc/oil.nvim",
         opts = {},
         config = function()

@@ -1,7 +1,7 @@
 local indent_scope = require "mini.indentscope"
 local pairs = require "mini.pairs"
 local comment = require "mini.comment"
-local files = require "mini.files"
+-- local files = require "mini.files"
 -- local cmp = require "mini.completion"
 -- local tabline = require "mini.tabline"
 -- local cursorword = require "mini.cursorword"
@@ -47,4 +47,4 @@ comment.setup(comment_opts)
 -- cmp.setup(cmp_opts)
 -- tabline.setup(tabline_opts)
 -- cursorword.setup(cursorword_opts)
-files.setup()
+-- files.setup()
