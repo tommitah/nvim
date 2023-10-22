@@ -6,7 +6,7 @@ require("mason-lspconfig").setup({
         "tailwindcss",
         "jsonls",
         "rust_analyzer",
-        "gopls"
+        "gopls",
     },
 })
 
@@ -16,18 +16,6 @@ local on_attach = require("lsp_config").on_attach
 local capabilities = require("lsp_config").capabilities
 local coq = require("coq")
 
-vim.g.coq_settings = {
-    keymap = {
-        -- recommended = false,
-        jump_to_mark = "<C-s>"
-    },
-    clients = {
-        paths = {
-            path_seps = { "/" },
-        },
-        buffers = { match_syms = true },
-    }
-}
 
 -- for JS/TS
 local typescript_tools = require("typescript-tools")
@@ -55,6 +43,30 @@ require("lspconfig").gopls.setup({
     capabilities = capabilities,
     coq.lsp_ensure_capabilities()
 })
+require("lspconfig").ocamllsp.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    coq.lsp_ensure_capabilities()
+})
+
+vim.g.coq_settings = {
+    keymap = {
+        -- recommended = false,
+        jump_to_mark = "<C-s>"
+    },
+    clients = {
+        paths = {
+            path_seps = { "/" },
+        },
+        buffers = { match_syms = true },
+    },
+    -- ["display.pum.y_max_len"] = 2,
+    display = {
+        pum = {
+            y_max_len = 5,
+        },
+    }
+}
 
 vim.cmd('COQnow -s')
 

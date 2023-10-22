@@ -6,12 +6,18 @@
 -- 	hi EndOfBuffer guibg=NONE ctermbg=NONE
 -- end
 -- ]])
--- vim.g.zenbones = { lightness = "dim", transparent_background = true }
--- vim.cmd.colorscheme 'zenbones'
--- vim.cmd([[ set background=light ]])
+-- if vim.g.neovide then
+--     vim.cmd "let g:neovide_transparency=0.95"
+-- end
+require("plugins.zenbones")
 
 -- vim.g.forestbones = { transparent_background = true }
 -- vim.cmd.colorscheme 'forestbones'
+
+-- require("plugins.rocker")
+
+-- require('plugins.gruvbox')
+-- vim.cmd("colorscheme gruvbox")
 
 -- require("colorbuddy").colorscheme("gruvbuddy")
 
@@ -22,8 +28,13 @@
 -- })
 -- vim.cmd.colorscheme("oxocarbon")
 
-require("plugins.tokyonight")
-vim.cmd.colorscheme "tokyonight"
+-- require("plugins.bamboo")
+
+-- require("plugins.tokyonight")
+-- vim.cmd.colorscheme "tokyonight"
+
+-- require("plugins.nightfox")
+-- vim.cmd.colorscheme "nightfox"
 
 -- vim.g.accent_colour = 'yellow'
 -- vim.cmd.colorscheme 'accent'
