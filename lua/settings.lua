@@ -3,7 +3,7 @@ vim.opt.termguicolors = true
 vim.opt.splitright = true
 vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.termguicolors = true
-vim.opt.guifont = "JetBrainsMono Nerd Font:h14"
+vim.opt.guifont = "JetBrainsMono Nerd Font:h16"
 vim.opt.showmode = false
 vim.opt.ignorecase = true
 
@@ -23,6 +23,13 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+if vim.g.neovide then
+    local glob = vim.g
+    glob.neovide_remember_window_size = true
+    glob.neovide_cursor_animation_length = 0.0
+    glob.neovide_refresh_rate = 120
+end
 
 -- vimscript sadness...
 vim.cmd([[

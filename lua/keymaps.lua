@@ -66,6 +66,8 @@ vim.keymap.set("n", "<leader>rbf", ":Refactor extract_block_to_file")
 vim.keymap.set("n", "-", "<cmd>Oil<cr>", opts)
 vim.keymap.set("n", "<leader>-", "<cmd>lua MiniFiles.open()<cr>", opts)
 
+vim.keymap.set("n", "<leader>FF", "<cmd>lua MiniPick.builtin.files({ tool = 'git' })<cr>", opts)
+
 -- Inc-rename
 vim.keymap.set("n", "rr", function()
 	return ":IncRename " .. vim.fn.expand("<cword>")

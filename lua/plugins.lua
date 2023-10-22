@@ -44,9 +44,9 @@ require("lazy").setup({
         end,
     },
     -- requires, 0.10.0, gives lsp/context breadcrumbs. could replace treesitter-context
-    -- {
-    --     "Bekaboo/dropbar.nvim"
-    -- },
+    {
+        "Bekaboo/dropbar.nvim"
+    },
     {
         "jinh0/eyeliner.nvim",
         config = function()
@@ -241,6 +241,21 @@ require("lazy").setup({
     },
     {
         "Verf/deepwhite.nvim"
+    },
+    {
+        "EdenEast/nightfox.nvim"
+    },
+    {
+        "ribru17/bamboo.nvim",
+        lazy = false,
+        priority = 1000
+    },
+    {
+        "rockerBOO/boo-colorscheme-nvim"
+    },
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000
     },
     {
         "folke/noice.nvim",
