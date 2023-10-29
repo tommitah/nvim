@@ -1,9 +1,9 @@
 local M = {
-    "williamboman/mason.nvim"
+  "williamboman/mason.nvim"
 }
 
 function M.config()
-    require("mason").setup()
+  require("mason").setup()
 end
 
 return M

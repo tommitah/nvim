@@ -1,5 +1,5 @@
 local M = {
-    "Bekaboo/dropbar.nvim"
+  "Bekaboo/dropbar.nvim"
 }
 
 return M

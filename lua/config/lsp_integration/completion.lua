@@ -1,6 +1,6 @@
 local M = {
-    "ms-jpq/coq_nvim",
-    branch = "coq"
+  "ms-jpq/coq_nvim",
+  branch = "coq"
 }
 
 return M

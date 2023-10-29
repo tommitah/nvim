@@ -1,10 +1,10 @@
 local M = {
-    "echasnovski/mini.comment",
-    version = false
+  "echasnovski/mini.comment",
+  version = false
 }
 
 function M.config()
-    require("mini.comment").setup()
+  require("mini.comment").setup()
 end
 
 return M
