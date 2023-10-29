@@ -13,7 +13,7 @@ require "config.theme"
 require "config.editing"
 require "config.visual"
 require "config.motion"
-require "config.lsp_integration"
+require "config.services"
 
 require "config.lazy"
 
