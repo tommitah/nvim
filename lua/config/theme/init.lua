@@ -1,0 +1,1 @@
+spec "config.theme.tokyonight"
