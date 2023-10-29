@@ -7,7 +7,7 @@ local M = {
 function M.config()
   require("tokyonight").setup({
     style = "moon",
-    transparent = true
+    transparent = false
   })
   vim.cmd.colorscheme "tokyonight"
 end
