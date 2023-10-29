@@ -27,6 +27,7 @@ vim.opt.expandtab = true
 if vim.g.neovide then
     local glob = vim.g
     glob.neovide_remember_window_size = true
+    glob.neovide_transparency = 0.95
     glob.neovide_cursor_animation_length = 0.0
     glob.neovide_refresh_rate = 120
 end

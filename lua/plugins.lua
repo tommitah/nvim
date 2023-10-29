@@ -14,9 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     -- necessities, QOL
     {
-        "sindrets/diffview.nvim"
-    },
-    {
         "stevearc/oil.nvim",
         opts = {},
         config = function()
@@ -34,7 +31,6 @@ require("lazy").setup({
             })
         end
     },
-    "mbbill/undotree",
     "nvim-pack/nvim-spectre",
     {
         "echasnovski/mini.nvim",
@@ -43,7 +39,6 @@ require("lazy").setup({
             require("plugins.mini")
         end,
     },
-    -- requires, 0.10.0, gives lsp/context breadcrumbs. could replace treesitter-context
     {
         "Bekaboo/dropbar.nvim"
     },
@@ -59,7 +54,6 @@ require("lazy").setup({
             require("plugins.treesitter")
         end,
     },
-    "nvim-treesitter/nvim-treesitter-context",
     -- NOTE: works with treesitter, so no setup!
     "windwp/nvim-ts-autotag",
     {
@@ -94,10 +88,6 @@ require("lazy").setup({
     {
         "ms-jpq/coq_nvim",
         branch = "coq"
-    },
-    {
-        "ms-jpq/coq.artifacts",
-        branch = "artifacts"
     },
     {
         "williamboman/mason.nvim",
@@ -139,13 +129,6 @@ require("lazy").setup({
         "onsails/lspkind.nvim",
         config = function()
             require("lspkind").init()
-        end,
-    },
-    {
-        "folke/trouble.nvim",
-        dependencies = "nvim-tree/nvim-web-devicons",
-        config = function()
-            require("trouble").setup()
         end,
     },
     {
@@ -257,14 +240,4 @@ require("lazy").setup({
         "ellisonleao/gruvbox.nvim",
         priority = 1000
     },
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        dependencies = {
-            "MunifTanjim/nui.nvim"
-        },
-        config = function ()
-            require('plugins.noice')
-        end
-    }
 })

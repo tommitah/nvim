@@ -2,7 +2,7 @@
 require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
-        "tsserver",
+        -- "tsserver",
         "tailwindcss",
         "jsonls",
         "rust_analyzer",
@@ -21,6 +21,9 @@ local coq = require("coq")
 local typescript_tools = require("typescript-tools")
 typescript_tools.setup({
     on_attach = on_attach,
+    settings = {
+        include_completions_with_insert_text = false
+    },
     coq.lsp_ensure_capabilities()
 })
 require("lspconfig").lua_ls.setup({

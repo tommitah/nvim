@@ -9,7 +9,7 @@
 -- if vim.g.neovide then
 --     vim.cmd "let g:neovide_transparency=0.95"
 -- end
-require("plugins.zenbones")
+-- require("plugins.zenbones")
 
 -- vim.g.forestbones = { transparent_background = true }
 -- vim.cmd.colorscheme 'forestbones'
@@ -30,8 +30,8 @@ require("plugins.zenbones")
 
 -- require("plugins.bamboo")
 
--- require("plugins.tokyonight")
--- vim.cmd.colorscheme "tokyonight"
+require("plugins.tokyonight")
+vim.cmd.colorscheme "tokyonight"
 
 -- require("plugins.nightfox")
 -- vim.cmd.colorscheme "nightfox"
