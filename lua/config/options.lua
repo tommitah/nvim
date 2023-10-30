@@ -2,6 +2,7 @@ vim.loader.enable() -- TODO: check this
 vim.opt.termguicolors = true
 vim.opt.splitright = true
 vim.opt.completeopt = "menuone,noinsert,noselect"
+-- vim.opt.completeopt = "menuone,noselect"
 vim.opt.termguicolors = true
 vim.opt.guifont = "JetBrainsMono Nerd Font:h16"
 vim.opt.showmode = false
