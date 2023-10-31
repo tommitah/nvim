@@ -14,6 +14,7 @@ require "config.editing"
 require "config.visual"
 require "config.motion"
 require "config.services"
+require "config.tests"
 
 require "config.lazy"
 
