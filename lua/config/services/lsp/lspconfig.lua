@@ -67,7 +67,7 @@ function M.config()
     },
     formatting = {
       format = lspkind.cmp_format({
-        mode = 'symbol',
+        mode = 'symbol_text',
         before = function(entry, vim_item)
           return vim_item
         end
