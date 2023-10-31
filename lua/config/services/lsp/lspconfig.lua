@@ -1,6 +1,10 @@
 local M = {
   "williamboman/mason-lspconfig.nvim",
-  dependencies = "neovim/nvim-lspconfig"
+  dependencies = {
+    "neovim/nvim-lspconfig",
+    "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip"
+  }
 }
 
 function M.config()
@@ -8,6 +12,7 @@ function M.config()
   local lspconfig = require "lspconfig"
   local ts_tools = require "typescript-tools"
   local lspkind = require "lspkind"
+  local luasnip = require "luasnip"
   local opts = require "config.services.lsp.server_opts"
 
   local cmp = require "cmp"
@@ -17,7 +22,16 @@ function M.config()
   opts.diagnostics()
 
   cmp.setup({
+    snippet = {
+      expand = function(args)
+        luasnip.lsp_expand(args.body)
+      end
+    },
     mapping = cmp.mapping.preset.insert({
+      ['<CR>'] = cmp.mapping.confirm({
+        select = true,
+        behavior = cmp.ConfirmBehavior.Replace
+      }),
       ['<Tab>'] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
@@ -44,7 +58,8 @@ function M.config()
           return true
         end
       },
-      { name = "path" }
+      { name = "path" },
+      { name = "luasnip" }
     }),
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,
@@ -53,7 +68,7 @@ function M.config()
     formatting = {
       format = lspkind.cmp_format({
         mode = 'symbol',
-        before = function (entry, vim_item)
+        before = function(entry, vim_item)
           return vim_item
         end
       })
@@ -80,7 +95,6 @@ function M.config()
   })
   -- require "config.services.lsp.coq_settings"
   -- vim.cmd('COQnow -s')
-
 end
 
 return M
