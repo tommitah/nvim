@@ -4,7 +4,7 @@ local M = {
 }
 
 function M.config()
-  require("mini.statusline").setup()
+  require("mini.statusline").setup({ })
 end
 
 return M

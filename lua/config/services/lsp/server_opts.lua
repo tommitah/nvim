@@ -2,6 +2,7 @@ local M = {}
 
 function M.on_attach(client, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
+  -- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
   vim.keymap.set("n", "gI", vim.lsp.buf.implementation, opts)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
