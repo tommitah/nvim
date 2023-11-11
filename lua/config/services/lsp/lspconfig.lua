@@ -16,7 +16,7 @@ function M.config()
   local opts = require "config.services.lsp.server_opts"
 
   local cmp = require "cmp"
-  local icons = require "config.visual.icons"
+  local icons = require "config.ui.icons"
   local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
   opts.diagnostics()
@@ -84,6 +84,10 @@ function M.config()
     on_attach = opts.on_attach,
     capabilities = capabilities
     -- coq.lsp_ensure_capabilities()
+  })
+  lspconfig.gopls.setup({
+    on_attach = opts.on_attach,
+    capabilities = capabilities
   })
   ts_tools.setup({
     on_attach = opts.on_attach,

@@ -13,7 +13,7 @@ function M.on_attach(client, bufnr)
 end
 
 function M.diagnostics()
-  local icons = require("config.visual.icons")
+  local icons = require("config.ui.icons")
   local signs = {
     { name = "DiagnosticSignError", text = icons.diagnostics.Error },
     { name = "DiagnosticSignWarn",  text = icons.diagnostics.Warning },

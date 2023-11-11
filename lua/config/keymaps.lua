@@ -7,4 +7,4 @@ vim.keymap.set("v", "<C-K>", ":m '>-2<CR>gv=gv", opts)
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 
-
+vim.keymap.set("n", "<C-f>", vim.lsp.buf.format)

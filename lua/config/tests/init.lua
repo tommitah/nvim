@@ -1,1 +1,0 @@
-spec "config.tests.test"

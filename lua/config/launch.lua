@@ -11,10 +11,9 @@ vim.g.maplocalleader = " "
 require "config.files"
 require "config.theme"
 require "config.editing"
-require "config.visual"
+require "config.ui"
 require "config.motion"
 require "config.services"
-require "config.tests"
 
 require "config.lazy"
 

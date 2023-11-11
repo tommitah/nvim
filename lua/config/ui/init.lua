@@ -1,0 +1,8 @@
+spec "config.ui.mini_indent"
+spec "config.ui.mini_statusline"
+spec "config.ui.dropbar"
+spec "config.ui.treesitter"
+spec "config.ui.gitsigns"
+spec "config.ui.todo"
+spec "config.ui.dressing"
+spec "config.ui.trouble"
