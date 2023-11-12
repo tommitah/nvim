@@ -1,20 +1,15 @@
 local M = {
-    "kevinhwang91/rnvimr"
+    "kelly-lin/ranger.nvim"
 }
 
 function M.config()
-    local opts = { noremap = true, silent = true }
-    -- vim.keymap.set("n", "-", "<cmd>RnvimrToggle<cr>", opts)
-    vim.cmd[[
-       let g:rnvimr_layout = {
-            \ 'relative': 'editor',
-            \ 'width': &columns,
-            \ 'height': &lines - 2,
-            \ 'col': 0,
-            \ 'row': 0,
-            \ 'style': 'minimal'
-            \ }
-    ]]
+    require("ranger-nvim").setup({ replace_netrw = true })
+    vim.api.nvim_set_keymap("n", "-", "", {
+        noremap = true,
+        callback = function ()
+            require("ranger-nvim").open(true)
+        end
+    })
 end
 
 return M
