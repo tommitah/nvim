@@ -1,1 +1,1 @@
-require("config.launch")
+require "config.launch"
