@@ -1,11 +1,9 @@
 local M = {
-  "stevearc/dressing.nvim"
+    "stevearc/dressing.nvim"
 }
 
 function M.config()
-  require("dressing").setup({
-    
-  })
+    require("dressing").setup()
 end
 
 return M

@@ -97,6 +97,11 @@ function M.config()
         capabilities = capabilities
         -- coq.lsp_ensure_capabilities()
     })
+    -- lspconfig.hls.setup({
+    --     filetypes = { 'haskell', 'lhaskell', 'cabal' },
+    --     on_attach = opts.on_attach,
+    --     capabilities = capabilities
+    -- })
     -- require "config.services.lsp.coq_settings"
     -- vim.cmd('COQnow -s')
 end
