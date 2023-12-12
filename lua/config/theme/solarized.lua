@@ -6,7 +6,7 @@ local M = {
 
 function M.config()
     require("solarized").setup({
-        transparent = false,
+        transparent = true,
         theme = "neo",
         -- theme = "default",
     })

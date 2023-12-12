@@ -1,4 +1,6 @@
 spec "config.services.completion"
 spec "config.services.tstools"
 require "config.services.lsp"
+spec "config.services.trouble"
+spec "config.services.fold"
 -- spec "config.lsp_integration.mason_lspconfig"

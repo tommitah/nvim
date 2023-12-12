@@ -1,4 +1,5 @@
 -- spec "config.theme.tokyonight"
+spec "config.theme.kanagawa"
 -- spec "config.theme.pyramid"
 -- spec "config.theme.catppuccin"
-spec "config.theme.solarized"
+-- spec "config.theme.solarized"
