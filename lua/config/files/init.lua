@@ -1,6 +1,7 @@
 spec "config.files.oil"
 -- spec "config.files.neotree"
-spec "config.files.fzf"
+-- spec "config.files.fzf"
+spec "config.files.jfind"
 spec "config.files.harpoon"
 -- spec "config.files.mini"
 -- spec "config.files.ranger"
