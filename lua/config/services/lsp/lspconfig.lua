@@ -89,6 +89,10 @@ function M.config()
         on_attach = opts.on_attach,
         capabilities = capabilities
     })
+    lspconfig.ocamllsp.setup({
+      on_attach = opts.on_attach,
+      capabilities = capabilities
+    })
     ts_tools.setup({
         on_attach = opts.on_attach,
         settings = {
