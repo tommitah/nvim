@@ -14,9 +14,16 @@ vim.opt.signcolumn = "yes:1"
 vim.opt.scrolloff = 8
 vim.opt.expandtab = true
 
+-- local strintbl = require("config.functions").stringInTbl
+-- if strintbl(vim.bo.filetype, { "javascript", "typescript", "javascriptreact", "typescriptreact" }) then
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
+-- else
+--   vim.opt.tabstop = 4
+--   vim.opt.softtabstop = 4
+--   vim.opt.shiftwidth = 4
+-- end
 
 if vim.g.neovide then
   local glob = vim.g
