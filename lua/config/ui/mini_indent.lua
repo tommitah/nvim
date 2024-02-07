@@ -21,7 +21,13 @@ function M.config()
     options = {
       border = "both",
     },
-    symbol = "|",
+    -- symbol = "|",
+    -- symbol = "⇣",
+    -- symbol = "∣",
+    -- symbol = "⌉",
+    -- symbol = "▎",
+    -- symbol = "┃",
+    symbol = "│",
   })
 end
 

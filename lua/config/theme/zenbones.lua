@@ -4,9 +4,10 @@ local M = {
 }
 
 function M.config()
-  vim.g.zenbones = { lightness = "dim", transparent_background = false }
-  vim.cmd([[ set background=light ]])
-  vim.cmd.colorscheme 'zenbones'
+  -- vim.g.zenbones = { lightness = "dim", transparent_background = false }
+  -- vim.cmd([[ set background=light ]])
+  -- vim.cmd.colorscheme 'zenbones'
+  vim.cmd.colorscheme "forestbones"
 end
 
 return M

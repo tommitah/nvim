@@ -26,6 +26,9 @@ if vim.g.neovide then
   glob.neovide_transparency = 0.90
 end
 
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+
 vim.cmd([[
 	set guicursor=n-v-c-i:block
 	nnoremap Y y$
@@ -37,6 +40,7 @@ vim.cmd([[
 	inoremap ? ?<c-g>u
 	inoremap <expr> <Tab>		pumvisible() ? "\<C-n>" : "\<Tab>"
 	inoremap <expr> <S-Tab>	pumvisible() ? "\<C-p>" : "\<S-Tab>"
-  let g:opamshare = substitute(system('opam var share'),'\n$','','''')
-  execute "set rtp+=" . g:opamshare . "/merlin/vim"
 ]])
+  -- let g:opamshare = substitute(system('opam var share'),'\n$','','''')
+  -- execute "set rtp+=" . g:opamshare . "/merlin/vim"
+  -- execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
