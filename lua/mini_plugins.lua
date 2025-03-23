@@ -44,7 +44,7 @@ now(function()
     options = {
       border = "both",
     },
-    symbol = "|",
+    symbol = "│",
   })
 
   require('mini.statusline').setup()
