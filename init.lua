@@ -6,6 +6,7 @@ require 'treesitter'
 require 'files'
 require 'editing'
 require 'color'
+require 'ui'
 
 -- FILE INFORMATION/SERVICES (LSP, completion)
 -- TROUBLE (DIAGNOSTICS/JUMPLIST)
