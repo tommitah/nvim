@@ -179,6 +179,35 @@ now(function()
   end, keymap_opts)
 end)
 -- HARPOON
+
+-- FZF
+add({
+  source = 'ibhagwan/fzf-lua',
+  depends = { 'nvim-tree/nvim-web-devicons' }
+})
+now(function()
+  local fzf_lua = require('fzf-lua')
+  fzf_lua.setup({ 'telescope' })
+
+  vim.keymap.set("n", "<leader>ff", fzf_lua.files, keymap_opts)
+  vim.keymap.set("n", "<leader>fg", fzf_lua.live_grep, keymap_opts)
+  vim.keymap.set("n", "<leader>fG", fzf_lua.live_grep_resume, keymap_opts)
+  vim.keymap.set({ "n", "v" }, "<leader>f*", fzf_lua.grep_cword, keymap_opts)
+  -- vim.keymap.set("n", "gd", fzf_lua.lsp_definitions, opts)
+  -- vim.keymap.set("n", "gr", fzf_lua.lsp_references, opts)
+  -- GIT STATUS
+  vim.keymap.set("n", "<leader>gs", fzf_lua.git_status, keymap_opts)
+  vim.keymap.set("n", "<leader>gB", fzf_lua.git_bcommits, keymap_opts)
+  vim.keymap.set("n", "<leader>gC", fzf_lua.git_commits, keymap_opts)
+  vim.keymap.set({ "n", "v" }, "<leader>fv", fzf_lua.grep_visual, keymap_opts)
+  vim.keymap.set("n", "<leader>bb", fzf_lua.buffers, keymap_opts)
+  vim.keymap.set("n", "<leader>Q", fzf_lua.quickfix, keymap_opts)
+  vim.keymap.set("n", "<leader>dW", fzf_lua.diagnostics_workspace, keymap_opts)
+  vim.keymap.set("n", "<leader>dD", fzf_lua.diagnostics_document, keymap_opts)
+end)
+
+-- FZF
+
 -- FILES
 
 -- COLOR
