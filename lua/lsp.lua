@@ -30,7 +30,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, Keymap_opts)
   vim.keymap.set("n", "gI", vim.lsp.buf.implementation, Keymap_opts)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, Keymap_opts)
-  vim.keymap.set("n", "gr", vim.lsp.buf.references, Keymap_opts)
+  -- vim.keymap.set("n", "gr", vim.lsp.buf.references, Keymap_opts)
   vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, Keymap_opts)
   vim.keymap.set("n", "rr", vim.lsp.buf.rename, Keymap_opts)
   vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, Keymap_opts)
@@ -53,6 +53,7 @@ local servers = {
   lua_ls = {},
   jsonls = {},
   eslint = {},
+  prettierd = {},
   html = {},
 }
 

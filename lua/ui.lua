@@ -5,6 +5,10 @@ local plugs = {
   {
     source = 'folke/trouble.nvim',
     depends = { 'nvim-tree/nvim-web-devicons' }
+  },
+  {
+    source = 'Bekaboo/dropbar.nvim',
+    depends = { 'nvim-telescope/telescope-fzf-native.nvim' }
   }
 }
 
@@ -38,7 +42,9 @@ now(function()
   vim.keymap.set("n", "<leader>xl", function()
     require("trouble").toggle("loclist")
   end, Keymap_opts)
-  vim.keymap.set("n", "gR", function()
+  vim.keymap.set("n", "gr", function()
     require("trouble").toggle("lsp_references")
   end, Keymap_opts)
+
+  vim.cmd([[hi WinBar guibg=NONE]])
 end)

@@ -68,7 +68,7 @@ now(function()
   vim.keymap.set("n", "<leader>fG", fzf_lua.live_grep_resume, Keymap_opts)
   vim.keymap.set({ "n", "v" }, "<leader>f*", fzf_lua.grep_cword, Keymap_opts)
   -- vim.keymap.set("n", "gd", fzf_lua.lsp_definitions, opts)
-  -- vim.keymap.set("n", "gr", fzf_lua.lsp_references, opts)
+  -- vim.keymap.set("n", "gr", fzf_lua.lsp_references, Keymap_opts)
   -- GIT STATUS
   vim.keymap.set("n", "<leader>gs", fzf_lua.git_status, Keymap_opts)
   vim.keymap.set("n", "<leader>gB", fzf_lua.git_bcommits, Keymap_opts)
