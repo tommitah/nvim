@@ -33,7 +33,7 @@ now(function()
   require('mini.indentscope').setup({
     draw = {
       delay = 0,
-      animation = function(s, n)
+      animation = function(_, _)
         return 0
       end,
     },
@@ -52,10 +52,10 @@ now(function()
   require('mini.pairs').setup()
 
   -- git status is requested through fuzzy plug
-  vim.keymap.set("n", "<leader>ga", "<cmd>Git add %<cr>", keymap_opts)
-  vim.keymap.set("n", "<leader>gc", "<cmd>Git commit<cr>", keymap_opts)
-  vim.keymap.set("n", "<leader>gl", "<cmd>Git log<cr>", keymap_opts)
-  vim.keymap.set("n", "<leader>gid", "<cmd>Git diff<cr>", keymap_opts)
-  vim.keymap.set("n", "<leader>gp", "<cmd>Git push origin", keymap_opts)
+  vim.keymap.set("n", "<leader>ga", "<cmd>Git add %<cr>", Keymap_opts)
+  vim.keymap.set("n", "<leader>gc", "<cmd>Git commit<cr>", Keymap_opts)
+  vim.keymap.set("n", "<leader>gl", "<cmd>Git log<cr>", Keymap_opts)
+  vim.keymap.set("n", "<leader>gid", "<cmd>Git diff<cr>", Keymap_opts)
+  vim.keymap.set("n", "<leader>gp", "<cmd>Git push origin", Keymap_opts)
 end)
 -- MINI UTILS

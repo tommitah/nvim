@@ -12,4 +12,5 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.list = true
 vim.opt.listchars:append("space:⋅")
+vim.opt.guicursor = 'n-v-c-i:block'
 -- VANILLA OPTS

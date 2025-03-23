@@ -1,4 +1,4 @@
-require 'options'
+require 'gen_options'
 require 'gen_keymaps'
 require 'package_management'
 require 'mini_plugins'
@@ -7,6 +7,7 @@ require 'files'
 require 'editing'
 require 'color'
 require 'ui'
+require 'lsp'
 
 -- FILE INFORMATION/SERVICES (LSP, completion)
 -- BLINK (COMPLETION)
