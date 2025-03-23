@@ -89,6 +89,7 @@ now(function()
   })
 
   require('mini.statusline').setup()
+  require('mini.git').setup()
 
   -- git status is requested through fuzzy plug
   vim.keymap.set("n", "<leader>ga", "<cmd>Git add %<cr>", keymap_opts)
@@ -181,6 +182,7 @@ end)
 -- FILES
 
 -- COLOR
+add({ source = 'lewis6991/gitsigns.nvim' })
 add({ source = 'rebelot/kanagawa.nvim', })
 now(function()
   require('kanagawa').setup({
@@ -192,6 +194,17 @@ now(function()
   })
 
   vim.cmd('colorscheme kanagawa')
+end)
+
+now(function()
+  local gitsigns = require('gitsigns')
+
+  gitsigns.setup()
+  vim.keymap.set("n", "<leader>gn", gitsigns.next_hunk, keymap_opts)
+  vim.keymap.set("n", "<leader>gp", gitsigns.prev_hunk, keymap_opts)
+  vim.keymap.set("n", "<leader>gw", gitsigns.preview_hunk_inline, keymap_opts)
+  vim.keymap.set("n", "<leader>gf", gitsigns.diffthis, keymap_opts)
+  vim.keymap.set("n", "<leader>gb", gitsigns.blame_line, keymap_opts)
 end)
 -- COLOR
 
