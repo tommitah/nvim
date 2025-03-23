@@ -10,5 +10,6 @@ require 'ui'
 require 'completion'
 require 'lsp'
 require 'formatting'
+require 'http'
 -- TODO:
 -- require 'llm'
