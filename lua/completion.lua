@@ -1,9 +1,7 @@
 local add, now = MiniDeps.add, MiniDeps.now
 
 local plugs = {
-  {
-    source = 'saghen/blink.cmp'
-  }
+  { source = 'saghen/blink.cmp' }
 }
 
 for _, plug in ipairs(plugs) do
