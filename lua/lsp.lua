@@ -1,5 +1,6 @@
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
+-- FILE INFORMATION/SERVICES
 
 local plugs = {
   -- THE ASSHOLE THAT WON'T DIE
@@ -36,3 +37,4 @@ now(function()
   lsp.lua_ls.setup({ })
   ts_tools.setup({ })
 end)
+-- FILE INFORMATION/SERVICES
