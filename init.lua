@@ -7,10 +7,5 @@ require 'files'
 require 'editing'
 require 'color'
 require 'ui'
+require 'completion'
 require 'lsp'
-
--- FILE INFORMATION/SERVICES (LSP, completion)
--- BLINK (COMPLETION)
--- FILE INFORMATION/SERVICES
-
-

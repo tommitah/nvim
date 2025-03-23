@@ -1,11 +1,15 @@
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+local add, now = MiniDeps.add, MiniDeps.now
 
--- BLINK (COMPLETION)
 local plugs = {
-
+  {
+    source = 'saghen/blink.cmp'
+  }
 }
 
 for _, plug in ipairs(plugs) do
   add(plug)
 end
--- BLINK (COMPLETION)
+
+now(function()
+  require('blink.cmp').setup()
+end)
