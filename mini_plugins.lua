@@ -49,6 +49,7 @@ now(function()
 
   require('mini.statusline').setup()
   require('mini.git').setup()
+  require('mini.pairs').setup()
 
   -- git status is requested through fuzzy plug
   vim.keymap.set("n", "<leader>ga", "<cmd>Git add %<cr>", keymap_opts)
