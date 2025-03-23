@@ -53,7 +53,6 @@ local servers = {
   lua_ls = {},
   jsonls = {},
   eslint = {},
-  prettierd = {},
   html = {},
 }
 
@@ -62,7 +61,7 @@ for _, plug in ipairs(plugs) do
 end
 
 -- LSP
-now(function()
+later(function()
   require('mason').setup()
 
   local lsp = require('lspconfig')
