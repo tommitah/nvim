@@ -1,7 +1,12 @@
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 local plugs = {
-  { source = 'stevearc/oil.nvim', },
+  {
+    source = 'stevearc/oil.nvim',
+    depends = {
+      'echasnovski/mini.icons'
+    }
+  },
   {
     source = 'ThePrimeagen/harpoon',
     checkout = 'harpoon2',
@@ -13,7 +18,7 @@ local plugs = {
   },
   {
     source = 'ibhagwan/fzf-lua',
-    depends = { 'nvim-tree/nvim-web-devicons' }
+    depends = { 'echasnovski/mini.icons' }
   }
 }
 

@@ -4,7 +4,7 @@ local plugs = {
   { source = 'lewis6991/gitsigns.nvim' },
   {
     source = 'folke/trouble.nvim',
-    depends = { 'nvim-tree/nvim-web-devicons' }
+    depends = { 'echasnovski/mini.icons' }
   },
   {
     source = 'Bekaboo/dropbar.nvim',

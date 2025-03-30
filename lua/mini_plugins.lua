@@ -22,6 +22,10 @@ local plugs = {
   {
     source = 'echasnovski/mini.indentscope',
     checkout = 'stable'
+  },
+  {
+    source = 'echasnovski/mini.icons',
+    checkout = 'stable'
   }
 }
 
@@ -44,12 +48,14 @@ now(function()
     options = {
       border = "both",
     },
-    symbol = "│",
+    symbol = "",
   })
 
   require('mini.statusline').setup()
   require('mini.git').setup()
   require('mini.pairs').setup()
+  require('mini.icons').setup()
+  MiniIcons.mock_nvim_web_devicons()
 
   -- git status is requested through fuzzy plug
   vim.keymap.set("n", "<leader>ga", "<cmd>Git add %<cr>", Keymap_opts)

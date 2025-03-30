@@ -9,6 +9,8 @@ local plugs = {
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
+      "ibhagwan/fzf-lua",
+      "echasnovski/mini.icons"
     },
     hooks = {
       post_checkout = function()
