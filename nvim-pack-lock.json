@@ -1,0 +1,76 @@
+{
+  "plugins": {
+    "CopilotChat.nvim": {
+      "rev": "df5376c132382dd47e3e552612940cbf25b3580c",
+      "src": "https://github.com/CopilotC-Nvim/CopilotChat.nvim"
+    },
+    "accent.vim": {
+      "rev": "54e0b255cb2c93555014197c8adc59d631c25696",
+      "src": "https://github.com/Alligator/accent.vim"
+    },
+    "blink.cmp": {
+      "version": "'v1.4.1'"
+    },
+    "conform.nvim": [],
+    "copilot-lsp": {
+      "rev": "884034b23c3716d55b417984ad092dc2b011115b",
+      "src": "https://github.com/copilotlsp-nvim/copilot-lsp"
+    },
+    "copilot.lua": {
+      "rev": "4383e05a47493d7ff77b058c0548129eb38ec7fb",
+      "src": "https://github.com/zbirenbaum/copilot.lua"
+    },
+    "eyeliner.nvim": [],
+    "fzf-lua": [],
+    "gitsigns.nvim": [],
+    "harpoon": {
+      "version": "'harpoon2'"
+    },
+    "image_preview.nvim": {
+      "rev": "3f3f46210ba13bf82b1eb750b2d6d90eb211ee24",
+      "src": "https://github.com/adelarsq/image_preview.nvim"
+    },
+    "kanagawa.nvim": {
+      "rev": "aef7f5cec0a40dbe7f3304214850c472e2264b10",
+      "src": "https://github.com/rebelot/kanagawa.nvim"
+    },
+    "lush.nvim": [],
+    "mini-git": [],
+    "mini.completion": [],
+    "mini.diff": [],
+    "mini.icons": [],
+    "mini.pairs": [],
+    "mini.pick": {
+      "rev": "96ee37d",
+      "src": "https://github.com/echasnovski/mini.pick"
+    },
+    "mini.statusline": [],
+    "neovim": [],
+    "nvim-highlight-colors": {
+      "rev": "e0c4a58ec8c3ca7c92d3ee4eb3bc1dd0f7be317e",
+      "src": "https://github.com/brenoprata10/nvim-highlight-colors"
+    },
+    "nvim-lspconfig": [],
+    "nvim-surround": [],
+    "nvim-treesitter": {
+      "version": "'main'"
+    },
+    "nvim-ts-autotag": [],
+    "oil.nvim": [],
+    "orgmode": [],
+    "plenary.nvim": [],
+    "quicker.nvim": [],
+    "slimline.nvim": {
+      "rev": "9d33edbf44b89e8411a392223078e4738241b576",
+      "src": "https://github.com/sschleemilch/slimline.nvim"
+    },
+    "snacks.nvim": {
+      "rev": "3c5c23b",
+      "src": "https://github.com/folke/snacks.nvim"
+    },
+    "solarized.nvim": [],
+    "telescope.nvim": [],
+    "vague.nvim": [],
+    "zenbones.nvim": []
+  }
+}
