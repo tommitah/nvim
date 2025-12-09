@@ -1,0 +1,15 @@
+# Stylua configuration
+
+# Use Unix-style line endings
+line_endings = "Unix"
+
+# Indentation style
+indent_type = "Spaces"
+indent_width = 2
+
+# Quote style
+quote_style = "AutoPreferSingle"
+call_parentheses = "Always"
+
+# Column width before line wrapping
+column_width = 100
