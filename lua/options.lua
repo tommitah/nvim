@@ -22,6 +22,10 @@ vim.opt.listchars:append('space:⋅')
 vim.opt.guicursor = 'n-v-c-i:block'
 vim.opt.swapfile = false
 
+-- yank/paste from os clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+p', Keymap_opts)
+vim.keymap.set({ 'n', 'v' }, '<leader>Y', '"+y', Keymap_opts)
+
 vim.g.disable_autoformat = false
 -- vim.opt.cmdheight = 0
 -- VANILLA OPTS

@@ -1,23 +1,20 @@
 require('util')
 vim.pack.add({
   { src = get_url('neovim/nvim-lspconfig') },
-  {
-    src = get_url('JavaHello/spring-boot.nvim'),
-    version = '218c0c26c14d99feca778e4d13f5ec3e8b1b60f0',
-  },
-  { src = get_url('nvim-java/nvim-java') },
   { src = get_url('mfussenegger/nvim-dap') },
 })
 
-require('java').setup()
 vim.lsp.enable({
   'lua_ls',
   'ts_ls',
-  'gopls',
   'marksman',
-  'rust_analyzer',
-  'bacon_ls',
-  'jdtls',
+  'clojure_lsp',
+  'jsonls',
+  'fennel_language_server',
+  'eslint',
+  -- 'rust_analyzer',
+  -- 'bacon_ls',
+  -- 'jdtls',
 })
 vim.lsp.config('lua_ls', {
   settings = {
@@ -29,11 +26,15 @@ vim.lsp.config('lua_ls', {
   },
 })
 vim.lsp.config('ts_ls', {})
+vim.lsp.config('eslint', {})
 vim.lsp.config('marksman', {})
-vim.lsp.config('gopls', {})
-vim.lsp.config('rust_analyzer', {})
-vim.lsp.config('bacon_ls', {})
-vim.lsp.config('jdtls', {})
+-- vim.lsp.config('gopls', {})
+-- vim.lsp.config('rust_analyzer', {})
+-- vim.lsp.config('bacon_ls', {})
+-- vim.lsp.config('jdtls', {})
+vim.lsp.config('jsonls', {})
+vim.lsp.config('clojure_lsp', {})
+vim.lsp.config('fennel_language_server', {})
 
 vim.keymap.set('n', 'K', function()
   vim.lsp.buf.hover({

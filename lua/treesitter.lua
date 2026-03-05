@@ -22,6 +22,9 @@ require('nvim-treesitter').install({
   'typescript',
   'tsx',
   'html',
+  'yaml',
+  'clojure',
+  'fennel',
 })
 
 vim.api.nvim_create_autocmd('FileType', {
@@ -37,9 +40,15 @@ vim.api.nvim_create_autocmd('FileType', {
     'html',
     'lua',
     'markdown',
+    'fennel',
+    'fnl',
+    'yaml',
+    '*.fnl',
     '*.rs',
     '*.jsx',
     '*.tsx',
+    'clj',
+    'clojure',
     'java',
   },
   callback = function()

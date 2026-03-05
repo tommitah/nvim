@@ -6,20 +6,31 @@ vim.pack.add({
     version = 'harpoon2',
   },
   { src = get_url('stevearc/oil.nvim') },
+  { src = get_url('refractalize/oil-git-status.nvim') },
+  { src = get_url('JezerM/oil-lsp-diagnostics.nvim') },
   { src = get_url('stevearc/quicker.nvim') },
   { src = get_url('stevearc/conform.nvim') },
   { src = get_url('ibhagwan/fzf-lua') },
   { src = get_url('jinh0/eyeliner.nvim') },
   { src = get_url('kylechui/nvim-surround') },
   { src = get_url('nvim-orgmode/orgmode') },
+  { src = get_url('kokusenz/deltaview.nvim') },
 })
 
+require('deltaview').setup({})
+
+-- OIL and it's slaves
 require('oil').setup({
   view_options = {
     show_hidden = true,
   },
+  win_options = {
+    signcolumn = 'yes:2',
+  },
 })
 vim.keymap.set('n', '-', '<cmd>Oil<cr>', Keymap_opts)
+
+require('oil-git-status').setup({ show_ignored = true })
 
 -- quickfix is automagically populated when you `:grep` something,
 -- <C-q> in fzf populates with fzf output
@@ -112,6 +123,7 @@ require('conform').setup({
     typescript = { 'prettierd', 'prettier', stop_after_first = true },
     typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
     rust = { 'rustfmt', lsp_format = 'fallback' },
+    clojure = { 'cljfmt' },
   },
   format_on_save = function(bufnr)
     if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
@@ -123,6 +135,9 @@ require('conform').setup({
 require('eyeliner').setup({
   highlight_on_key = true,
   dim = true,
+  disabled_filetypes = {
+    'orgagenda',
+  },
 })
 require('nvim-surround').setup()
 

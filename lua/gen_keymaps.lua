@@ -20,4 +20,12 @@ vim.keymap.set({ 'n', 'v' }, 'N', 'Nzzzv', Keymap_opts)
 -- language formatting
 vim.keymap.set({ 'n', 'v' }, '<leader>lf', vim.lsp.buf.format, Keymap_opts)
 
+-- tabs (useful with clj repl for example)
+vim.keymap.set('n', '<leader>>', function()
+  vim.cmd('tabnext')
+end, Keymap_opts)
+vim.keymap.set('n', '<leader><', function()
+  vim.cmd('tabprevious')
+end, Keymap_opts)
+
 -- GENERIC KEYMAPS
