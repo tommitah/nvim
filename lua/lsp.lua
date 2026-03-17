@@ -12,6 +12,7 @@ vim.lsp.enable({
   'jsonls',
   'fennel_language_server',
   'eslint',
+  'biome',
   -- 'rust_analyzer',
   -- 'bacon_ls',
   -- 'jdtls',
@@ -27,6 +28,7 @@ vim.lsp.config('lua_ls', {
 })
 vim.lsp.config('ts_ls', {})
 vim.lsp.config('eslint', {})
+vim.lsp.config('biome', {})
 vim.lsp.config('marksman', {})
 -- vim.lsp.config('gopls', {})
 -- vim.lsp.config('rust_analyzer', {})

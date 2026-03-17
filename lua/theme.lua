@@ -14,6 +14,7 @@ vim.pack.add({
   { src = get_url('kungfusheep/mfd.nvim') },
   { src = get_url('webhooked/kanso.nvim') },
   { src = get_url('aymenhafeez/doric-themes.nvim') },
+  { src = get_url('folke/tokyonight.nvim') },
 })
 
 require('nvim-highlight-colors').setup({})
@@ -26,6 +27,7 @@ require('nvim-highlight-colors').setup({})
 --   },
 -- })
 -- vim.cmd.colorscheme('rose-pine')
+
 -- require('kanso').setup({
 --   transparent = true,
 --   compile = true,
@@ -36,6 +38,7 @@ require('nvim-highlight-colors').setup({})
 -- })
 -- vim.cmd('set background=dark')
 -- vim.cmd.colorscheme('kanso')
+
 -- require('solarized').setup({
 --   transparent = {
 --     enabled = true,
@@ -45,30 +48,44 @@ require('nvim-highlight-colors').setup({})
 -- })
 -- vim.cmd('set background=dark')
 -- vim.cmd.colorscheme('solarized')
+
 -- vim.cmd.colorscheme 'accent'
--- require('kanagawa').setup({
+
+-- require('tokyonight').setup({
+--   style = 'moon',
 --   transparent = true,
---   background = {
---     -- dark = 'dragon',
---     dark = 'wave',
---   },
 -- })
--- vim.cmd.colorscheme('kanagawa')
+-- vim.cmd('set background=dark')
+-- vim.cmd.colorscheme('tokyonight')
+
+require('kanagawa').setup({
+  transparent = true,
+  background = {
+    -- dark = 'dragon',
+    dark = 'wave',
+  },
+})
+vim.cmd('set background=dark')
+vim.cmd.colorscheme('kanagawa')
+
 -- require('vague').setup({
 --   transparent = true,
 -- })
 -- vim.cmd('colorscheme vague')
-require('doric').setup({
-  light = 'doric-oak',
-})
-vim.cmd('set background=light')
-vim.cmd.colorscheme('doric')
+
+-- require('doric').setup({
+--   light = 'doric-oak',
+-- })
+-- vim.cmd('set background=light')
+-- vim.cmd.colorscheme('doric')
+
 -- require('nordic').setup({
 --   transparent = {
 --     bg = true,
 --   },
 -- })
 -- require('nordic').load()
+
 -- vim.g.zenbones = {
 --   -- lightness = 'dim',
 --   transparent_background = true,
@@ -81,11 +98,13 @@ vim.cmd.colorscheme('doric')
 -- }
 -- vim.cmd('set background=light')
 -- vim.cmd.colorscheme('zenbones')
+
 -- vim.g.forestbones = {
 --   transparent_background = true,
 -- }
 -- vim.cmd('set background=dark')
 -- vim.cmd.colorscheme('forestbones')
+
 -- require('everforest').setup({
 --   background = 'medium',
 --   transparent_background_level = 2,
