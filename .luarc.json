@@ -2,7 +2,8 @@
   "diagnostics.globals": [
     "vim",
     "Snacks",
-        "resolve_full_source_url",
-        "get_url"
+    "resolve_full_source_url",
+    "get_url",
+    "get_active_lsp_clients"
   ]
 }
