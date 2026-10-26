@@ -5,5 +5,4 @@ local function print_active_lsp_clients()
   end
   return nil
 end
-print_active_lsp_clients()
 return {["print-active-lsp-clients"] = print_active_lsp_clients}

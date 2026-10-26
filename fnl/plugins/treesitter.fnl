@@ -21,6 +21,7 @@
                                  :tsx
                                  :html
                                  :yaml
+                                 :python
                                  :clojure
                                  :java
                                  :fennel]]

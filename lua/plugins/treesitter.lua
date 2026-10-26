@@ -11,7 +11,7 @@ end
 _G.vim.api.nvim_create_autocmd("FileType", {pattern = {"*"}, callback = _1_})
 local function _4_()
   local ts = require("nvim-treesitter")
-  local languages = {"rust", "vimdoc", "lua", "json", "markdown", "markdown_inline", "javascript", "typescript", "tsx", "html", "yaml", "clojure", "java", "fennel"}
+  local languages = {"rust", "vimdoc", "lua", "json", "markdown", "markdown_inline", "javascript", "typescript", "tsx", "html", "yaml", "python", "clojure", "java", "fennel"}
   return ts.install(languages)
 end
 return {{"nvim-treesitter/nvim-treesitter", branch = "main", build = ":TSUpdate", config = _4_, main = "nvim-treesitter.configs"}, {"windwp/nvim-ts-autotag"}}

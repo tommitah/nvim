@@ -5,6 +5,13 @@
      {:event :VeryLazy
       :opts {:enabled false}
       :keys [(tx :<leader>gb ":GitBlameToggle<CR>" keymap-opts)]})
- (tx :sindrets/diffview.nvim)
- (tx :NeogitOrg/neogit {:keys [(tx :<leader>gg ":Neogit<CR>" keymap-opts)]})
- (tx :pwntester/octo.nvim {:dependencies [(tx :nvim-tree/nvim-web-devicons)]})]
+ (tx :NeogitOrg/neogit
+     {:dependencies [(tx :sindrets/diffview.nvim
+                         {:cmd [:DiffviewOpen
+                                :DiffviewFileHistory
+                                :DiffviewClose
+                                :DiffviewToggleFiles
+                                :DiffviewFocusFiles
+                                :DiffviewRefresh]})]
+      :keys [(tx :<leader>gg ":Neogit<CR>" keymap-opts)]})
+ (tx :justinmk/guh.nvim)]

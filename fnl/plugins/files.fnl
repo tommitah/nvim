@@ -8,12 +8,18 @@
   #((. (require :quicker) method)))
 
 [(tx :stevearc/oil.nvim
-     {:opts {:view_options {:show_hidden true}
+     {:lazy false
+      :opts {:default-file-explorer true
+             :view_options {:show_hidden true}
              :win_options {:signcolumn "yes:2"}}
       :keys [(tx "-" :<cmd>Oil<CR> keymap-opts)]})
- (tx :refractalize/oil-git-status.nvim
-     {:opts {:show_ignored true} :dependencies [(tx :stevearc/oil.nvim)]})
- (tx :JezerM/oil-lsp-diagnostics.nvim {:dependencies [(tx :stevearc/oil.nvim)]})
+ (tx :nvim-neo-tree/neo-tree.nvim
+     {:branch :v3.x
+      :lazy false
+      :dependencies [(tx :nvim-lua/plenary.nvim) (tx :MunifTanjim/nui.nvim)]
+      :opts {:filesystem {:follow_current_file {:enabled true
+                                                :leave_dirs_open true}
+                          :window {:width 55}}}})
  (tx :otavioschwanck/arrow.nvim
      {:dependencies [(tx :nvim-tree/nvim-web-devicons)]
       :opts {:show_icons true
@@ -36,18 +42,23 @@
                                 :javascriptreact [:prettierd]
                                 :typescript [:prettierd]
                                 :typescriptreact [:prettierd]
+                                ; :javascript [:biome-check]
+                                ; :javascriptreact [:biome-check]
+                                ; :typescript [:biome-check]
+                                ; :typescriptreact [:biome-check]
                                 :rust [:rustfmt :lsp_format :fallback]
-                                ; :clojure [:zprint]
-                                ; :clj [:zprint]
-                                ; :cljs [:zprint]
-                                ; :cljc [:zprint]
-                                ; :edn [:zprint]
-                                :clojure [:cljstyle]
-                                :clj [:cljstyle]
-                                :cljs [:cljstyle]
-                                :cljc [:cljstyle]
-                                :edn [:cljstyle]
-                                :fennel [:fnlfmt]}
+                                :clojure [:zprint]
+                                :clj [:zprint]
+                                :cljs [:zprint]
+                                :cljc [:zprint]
+                                :edn [:zprint]
+                                ; :clojure [:cljstyle]
+                                ; :clj [:cljstyle]
+                                ; :cljs [:cljstyle]
+                                ; :cljc [:cljstyle]
+                                ; :edn [:cljstyle]
+                                :fennel [:fnlfmt]
+                                :xml [:xmlstarlet]}
              :format_on_save (fn [bufnr]
                                (when (not (or _G.vim.g.disable_autoformat
                                               (. _G.vim.b bufnr
@@ -55,7 +66,8 @@
                                  {:timeout_ms 500 :lsp_format :fallback}))
              :formatters {:zprint {:map {:comma? false}}}}})
  (tx :ibhagwan/fzf-lua
-     {:opts {:ui_select true
+     {:cmd :FzfLua
+      :opts {;;:ui_select true
              :keymap {:fzf {:ctrl-q :select-all+accept}}
              ;; :actions {:files {"ctrl-q" fzf-lua.actions.file_sel_to_qf}}
              :winopts {;; :split "belowright new"
@@ -86,9 +98,7 @@
              :disabled_filetypes [;; disable eyeliner movements so toggling stuff in orgmode isn't a hassle
                                   :orgagenda]}})
  (tx :kylechui/nvim-surround)
- (tx :nvim-orgmode/orgmode
-     {:opts {:org_agenda_files "~/development/notes/orgfiles/**/*"
-             :org_default_notes_file "~/development/notes/orgfiles/refile.org"}
-      :keys [(tx :<leader>ot ":lua Org.capture.t()<cr>" keymap-opts)]})
  ; (tx :kokusenz/deltaview.nvim {:dependencies [(tx :kokusenz/delta.lua)]})
- (tx :folke/todo-comments.nvim)]
+ (tx :folke/todo-comments.nvim
+     {:dependencies [(tx :nvim-lua/plenary.nvim)]
+      :config (fn [] (: (require :todo-comments) :setup))})]
