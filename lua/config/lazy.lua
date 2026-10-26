@@ -19,6 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- import your plugins
+    { "Olical/nfnl"}, -- This needs to be here in order ot use `: autoload`
     { import = "plugins" },
   },
   -- Configure any other settings here. See the documentation for more details.

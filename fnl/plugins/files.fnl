@@ -1,11 +1,9 @@
 (import-macros {: tx} :config.macros)
 (local {: keymap-opts} (require :options))
+(local {: autoload} (require :nfnl.module))
 
-(fn fzf [method]
-  #((. (require :fzf-lua) method)))
-
-(fn quicker [method]
-  #((. (require :quicker) method)))
+(local fzf (autoload :fzf-lua))
+(local quicker (autoload :quicker))
 
 [(tx :stevearc/oil.nvim
      {:lazy false
@@ -13,13 +11,6 @@
              :view_options {:show_hidden true}
              :win_options {:signcolumn "yes:2"}}
       :keys [(tx "-" :<cmd>Oil<CR> keymap-opts)]})
- (tx :nvim-neo-tree/neo-tree.nvim
-     {:branch :v3.x
-      :lazy false
-      :dependencies [(tx :nvim-lua/plenary.nvim) (tx :MunifTanjim/nui.nvim)]
-      :opts {:filesystem {:follow_current_file {:enabled true
-                                                :leave_dirs_open true}
-                          :window {:width 55}}}})
  (tx :otavioschwanck/arrow.nvim
      {:dependencies [(tx :nvim-tree/nvim-web-devicons)]
       :opts {:show_icons true
@@ -27,7 +18,7 @@
              :buffer_leader_key :<leader>P}})
  (tx :stevearc/quicker.nvim
      {:opts {}
-      :keys [(tx :<leader>q (quicker :toggle) keymap-opts)
+      :keys [(tx :<leader>q #(quicker.toggle) keymap-opts)
              ;; note that this doesn't clear the loclist
              (tx :<leader>cq "<cmd>call setqflist([])<cr>" keymap-opts)
              (tx :<C-k> :<cmd>cprev<CR>zz keymap-opts)
@@ -75,19 +66,19 @@
                        :preview {:border :none
                                  :vertical "down:50%"
                                  :layout :vertical}}}
-      :keys [(tx :<leader>ff (fzf :files) keymap-opts)
-             (tx :<leader>fg (fzf :live_grep) keymap-opts)
-             (tx :<leader>fG (fzf :live_grep_resume) keymap-opts)
-             (tx :<leader>f* (fzf :grep_cword) :mode [:n :v] keymap-opts)
+      :keys [(tx :<leader>ff #(fzf.files) keymap-opts)
+             (tx :<leader>fg #(fzf.live_grep) keymap-opts)
+             (tx :<leader>fG #(fzf.live_grep_resume) keymap-opts)
+             (tx :<leader>f* #(fzf.grep_cword) :mode [:n :v] keymap-opts)
              ;; GIT STATUS
-             (tx :<leader>gs (fzf :git_status) keymap-opts)
-             (tx :<leader>gB (fzf :git_bcommits) keymap-opts)
-             (tx :<leader>gC (fzf :git_commits) keymap-opts)
-             (tx :<leader>fv (fzf :grep_visual) :mode [:n :v] keymap-opts)
-             (tx :<leader>bb (fzf :buffers) keymap-opts)
-             (tx :<leader>Q (fzf :quickfix) keymap-opts)
-             (tx :<leader>dW (fzf :diagnostics_workspace) keymap-opts)
-             (tx :<leader>dD (fzf :diagnostics_document) keymap-opts)
+             (tx :<leader>gs #(fzf.git_status) keymap-opts)
+             (tx :<leader>gB #(fzf.git_bcommits) keymap-opts)
+             (tx :<leader>gC #(fzf.git_commits) keymap-opts)
+             (tx :<leader>fv #(fzf.grep_visual) :mode [:n :v] keymap-opts)
+             (tx :<leader>bb #(fzf.buffers) keymap-opts)
+             (tx :<leader>Q #(fzf.quickfix) keymap-opts)
+             (tx :<leader>dW #(fzf.diagnostics_workspace) keymap-opts)
+             (tx :<leader>dD #(fzf.diagnostics_document) keymap-opts)
              (tx :<leader>ga "<cmd>Git add %<cr>" keymap-opts)
              (tx :<leader>gc "<cmd>Git commit<cr>" keymap-opts)
              (tx :<leader>gl "<cmd>Git log<cr>" keymap-opts)
@@ -101,4 +92,4 @@
  ; (tx :kokusenz/deltaview.nvim {:dependencies [(tx :kokusenz/delta.lua)]})
  (tx :folke/todo-comments.nvim
      {:dependencies [(tx :nvim-lua/plenary.nvim)]
-      :config (fn [] (: (require :todo-comments) :setup))})]
+      :config #((. (require :todo-comments) :setup))})]

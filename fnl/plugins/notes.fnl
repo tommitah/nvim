@@ -1,7 +1,6 @@
 (import-macros {: tx} :config.macros)
-
-(fn fzf [method opts]
-  #((. (require :fzf-lua) method) (opts)))
+(local {: autoload} (require :nfnl.module))
+(local fzf (autoload :fzf-lua))
 
 (local root-path "~/development/notes/work_wiki")
 
@@ -12,6 +11,6 @@
       :keys [(tx :<leader>ww
                  ;; let's open tabs by default so we can close the wiki by :wq
                  "<cmd>lua require('neowiki').open_wiki_new_tab()<cr>")
-             (tx :<leader>wf (fzf :files #{:cwd (wiki-root root-path)}))
-             (tx :<leader>wg (fzf :live_grep #{:cwd (wiki-root root-path)}))]
+             (tx :<leader>wf #(fzf.files #{:cwd (wiki-root root-path)}))
+             (tx :<leader>wg #(fzf.live_grep #{:cwd (wiki-root root-path)}))]
       :dependencies [(tx :tpope/vim-repeat) (tx :ibhagwan/fzf-lua)]})]
