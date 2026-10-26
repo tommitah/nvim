@@ -2,13 +2,13 @@
 local function _1_()
   local function _2_()
     local function _3_()
-      return _G.vim.treesitter.start()
+      return vim.treesitter.start()
     end
     return pcall(_3_)
   end
-  return _G.vim.schedule(_2_)
+  return vim.schedule(_2_)
 end
-_G.vim.api.nvim_create_autocmd("FileType", {pattern = {"*"}, callback = _1_})
+vim.api.nvim_create_autocmd("FileType", {pattern = {"*"}, callback = _1_})
 local function _4_()
   local ts = require("nvim-treesitter")
   local languages = {"rust", "vimdoc", "lua", "json", "markdown", "markdown_inline", "javascript", "typescript", "tsx", "html", "yaml", "python", "clojure", "java", "fennel"}

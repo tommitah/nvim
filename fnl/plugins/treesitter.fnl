@@ -1,8 +1,8 @@
 (import-macros {: tx} :config.macros)
 
-(_G.vim.api.nvim_create_autocmd :FileType
-                                {:pattern ["*"]
-                                 :callback #(_G.vim.schedule #(pcall #(_G.vim.treesitter.start)))})
+(vim.api.nvim_create_autocmd :FileType
+                             {:pattern ["*"]
+                              :callback #(vim.schedule #(pcall #(vim.treesitter.start)))})
 
 [(tx :nvim-treesitter/nvim-treesitter
      {:main :nvim-treesitter.configs

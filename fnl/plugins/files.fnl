@@ -60,8 +60,8 @@
                                 :fennel [:fnlfmt]
                                 :xml [:xmlstarlet]}
              :format_on_save (fn [bufnr]
-                               (when (not (or _G.vim.g.disable_autoformat
-                                              (. _G.vim.b bufnr
+                               (when (not (or vim.g.disable_autoformat
+                                              (. vim.b bufnr
                                                  :disable_autoformat)))
                                  {:timeout_ms 500 :lsp_format :fallback}))
              :formatters {:zprint {:map {:comma? false}}}}})

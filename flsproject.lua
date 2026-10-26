@@ -1,2 +1,2 @@
 -- [nfnl] flsproject.fnl
-return {["macro-path"] = "fnl/config/macros.fnl", library = {nvim = true}}
+return {["macro-path"] = "fnl/config/macros.fnlm", ["lua-version"] = "lua5.1", libraries = {nvim = true}}

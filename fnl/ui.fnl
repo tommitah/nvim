@@ -1,4 +1,4 @@
-; (set _G.vim.o.cmdheight 0)
+; (set vim.o.cmdheight 0)
 ; this is not working properly at the moment, come back later
 ; (-> (require :vim._core.ui2)
 ;     (: :enable {:enable true :msg {:targets :cmd :timeout 0}}))

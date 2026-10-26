@@ -5,7 +5,7 @@
 
 (local root-path "~/development/notes/work_wiki")
 
-(fn wiki-root [path] (or _G.vim.b.ultimate_wiki_root (_G.vim.fn.expand path)))
+(fn wiki-root [path] (or vim.b.ultimate_wiki_root (vim.fn.expand path)))
 
 [(tx :echaya/neowiki.nvim
      {:opts {:wiki_dirs [{:name :work_dev :path root-path}]}

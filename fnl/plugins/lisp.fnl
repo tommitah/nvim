@@ -3,7 +3,7 @@
 
 [(tx :Olical/nfnl)
  (tx :Olical/conjure {:event :VeryLazy
-                      :init #(tset _G.vim.g "conjure#mapping#doc_word" false)
+                      :init #(set vim.g.conjure#mapping#doc_word false)
                       :keys [(tx :<leader>re
                                  "<cmd>ConjureEval (user/reload)<cr>"
                                  keymap-opts)]})

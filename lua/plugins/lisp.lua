@@ -2,7 +2,7 @@
 local _local_1_ = require("options")
 local keymap_opts = _local_1_["keymap-opts"]
 local function _2_()
-  _G.vim.g["conjure#mapping#doc_word"] = false
+  vim.g["conjure#mapping#doc_word"] = false
   return nil
 end
 local function _3_()

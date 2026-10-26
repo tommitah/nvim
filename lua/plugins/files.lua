@@ -14,7 +14,7 @@ local function quicker(method)
   return _3_
 end
 local function _4_(bufnr)
-  if not (_G.vim.g.disable_autoformat or _G.vim.b[bufnr].disable_autoformat) then
+  if not (vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat) then
     return {timeout_ms = 500, lsp_format = "fallback"}
   else
     return nil

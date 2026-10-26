@@ -7,7 +7,7 @@ local function fzf(method, opts)
 end
 local root_path = "~/development/notes/work_wiki"
 local function wiki_root(path)
-  return (_G.vim.b.ultimate_wiki_root or _G.vim.fn.expand(path))
+  return (vim.b.ultimate_wiki_root or vim.fn.expand(path))
 end
 local function _2_()
   return {cwd = wiki_root(root_path)}
