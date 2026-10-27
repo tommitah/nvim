@@ -12,12 +12,7 @@
                                :opencode_output]})
                      (tx :saghen/blink.cmp)
                      (tx :ibhagwan/fzf-lua)]
-      :opts {:ui {:window_width 1.0}}
-      :config (fn []
-                ((. (require :opencode) :setup) {:ui {:window_width 1.0
-                                                      :position :current
-                                                      ; :persist_state false
-                                                      :use_vim_ui_select true}}))})]
+      :opts {:ui {:window_width 1.0 :position :current :use_vim_ui_select true}}})]
 
 ;; opencode binds
 ;; EDITOR

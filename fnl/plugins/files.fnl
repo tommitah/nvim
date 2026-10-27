@@ -5,11 +5,23 @@
 (local fzf (autoload :fzf-lua))
 (local quicker (autoload :quicker))
 
+(fn oil-select-right []
+  "Open the entry in a split on the right, sized to `oil-preview-ratio` of the screen."
+  (let [oil-preview-ratio 0.7]
+    ((. (require :oil) :select) {:vertical true :split :belowright}
+                                (fn [err]
+                                  (when (not err)
+                                    (vim.api.nvim_win_set_width 0
+                                                                (math.floor (* vim.o.columns
+                                                                               oil-preview-ratio))))))))
+
 [(tx :stevearc/oil.nvim
      {:lazy false
       :opts {:default-file-explorer true
              :view_options {:show_hidden true}
-             :win_options {:signcolumn "yes:2"}}
+             :win_options {:signcolumn "yes:2"}
+             :keymaps {:<C-s> {:callback oil-select-right
+                               :desc "Open in right split (30/70)"}}}
       :keys [(tx "-" :<cmd>Oil<CR> keymap-opts)]})
  (tx :otavioschwanck/arrow.nvim
      {:dependencies [(tx :nvim-tree/nvim-web-devicons)]
