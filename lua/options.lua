@@ -7,7 +7,7 @@ local function _1_()
   vim.opt_local.wrap = true
   return nil
 end
-vim.api.nvim_create_autocmd("FileType", {pattern = {"markdown", "text", "norg", "neorg"}, callback = _1_})
+vim.api.nvim_create_autocmd("FileType", {pattern = {"markdown", "text", "norg", "neorg", "org"}, callback = _1_})
 vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.signcolumn = "yes:1"
@@ -27,7 +27,5 @@ vim.api.nvim_create_autocmd("FileType", {pattern = "java", callback = _2_})
 vim.opt.list = true
 vim.opt.guicursor = "n-v-c-i:block"
 vim.opt.swapfile = false
-vim.keymap.set({"n", "v"}, "<leader>P", "\"+p", keymap_opts)
-vim.keymap.set({"n", "v"}, "<leader>Y", "\"+y", keymap_opts)
 vim.g.disable_autoformat = false
 return {["keymap-opts"] = keymap_opts}

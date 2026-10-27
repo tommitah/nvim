@@ -33,35 +33,20 @@
      {:init (fn []
               (vim.lsp.enable [:lua_ls
                                :tsc
-                               ;; :ts_ls
-                               ;; :tsgo
-                               ; :oxlint
-                               ;; new go implementation of tsserver
                                :marksman
                                :clojure_lsp
                                :jsonls
                                :fennel_ls
                                :eslint
                                :basedpyright
-                               :ruff
-                               ; :biome
-                               ;; :jdtls is owned by nvim-java (see its config below)
-                               ;; :rust_analyzer
-                               ;; :bacon_ls
-                               ])
+                               :ruff])
               (vim.lsp.config :lua_ls
                               {:settings {:Lua {:workspace {:library (vim.api.nvim_get_runtime_file ""
                                                                                                     true)}}}})
-              ;; (vim.lsp.config :ts_ls {})
               (vim.lsp.config :ruff {})
               (vim.lsp.config :basedpyright {})
-              (vim.lsp.config :tsgo {}) ; (vim.lsp.config :oxlint {})
               (vim.lsp.config :eslint {})
-              (vim.lsp.config :biome {})
               (vim.lsp.config :marksman {})
-              ;; (vim.lsp.config :gopls {})
-              ;; (vim.lsp.config :rust_analyzer {})
-              ;; (vim.lsp.config :bacon_ls {})
               (vim.lsp.config :jsonls {})
               (vim.lsp.config :clojure_lsp {}))})
  (tx :mfussenegger/nvim-dap)
@@ -91,8 +76,4 @@
                                                                                                    :path :/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
                                                                                                    :default true}]}
                                                                        :import {:gradle {:java {:home :/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home}}}}}})
-                                    (vim.lsp.enable :jdtls))})]})
- ; {:src (plug->git :JavaHello/spring-boot.nvim)
- ;  :version :218c0c26c14d99feca778e4d13f5ec3e8b1b60f0}
- ; {:src (plug->git :nvim-java/nvim-java)}
- ]
+                                    (vim.lsp.enable :jdtls))})]})]
