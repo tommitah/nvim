@@ -28,4 +28,4 @@ local function _1_()
   end
   return nil
 end
-return {{"rktjmp/lush.nvim"}, {"rebelot/kanagawa.nvim", opts = {transparent = true, compile = true, background = {dark = "dragon"}}}, {"zenbones-theme/zenbones.nvim"}, {"dchinmay2/alabaster.nvim", init = _1_}, {"maxmx03/solarized.nvim", opts = {transparent = {enabled = true}, palette = "selenized", variant = "summer"}}, {"vague2k/vague.nvim", opts = {transparent = true}}, {"brenoprata10/nvim-highlight-colors"}, {"kungfusheep/mfd.nvim"}, {"webhooked/kanso.nvim", opts = {transparent = true, compile = true, background = {dark = "mist", light = "pearl"}}}, {"folke/tokyonight.nvim", opts = {style = "storm", transparent = true}}}
+return {{"brenoprata10/nvim-highlight-colors"}, {"dchinmay2/alabaster.nvim", init = _1_}}

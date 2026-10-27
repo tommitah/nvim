@@ -1,20 +1,7 @@
 (import-macros {: tx} :config.macros)
 
-[(tx :rktjmp/lush.nvim)
- (tx :rebelot/kanagawa.nvim {:opts {:transparent true
-                                    :compile true
-                                    :background {;;:dark :wave
-                                                 :dark :dragon}}
-                             ; :init #(do
-                             ;          (vim.cmd "set background=dark")
-                             ;          (vim.cmd.colorscheme :kanagawa))
-                             })
- (tx :zenbones-theme/zenbones.nvim ; {:init #(do
-     ;           (set vim.g.zenbones
-     ;                {:lightness :dim :transparent_background true})
-     ;           (vim.cmd "set background=light") ; (vim.cmd "set background=dark")
-     ;           (vim.cmd.colorscheme :zenbones))}
-     )
+[(tx :brenoprata10/nvim-highlight-colors)
+ ;; My "custom" alabastard (lol), this will at some point be a plugin I think
  (tx :dchinmay2/alabaster.nvim
      {:init #(do
                (vim.cmd "set background=dark")
@@ -76,29 +63,4 @@
                                        ;; LSP semantic token wins over treesitter (priority
                                        ;; 125 vs 100), so override it here too.
                                        "@lsp.type.macro.clojure"])]
-                 (vim.api.nvim_set_hl 0 group {:link "@keyword.operator"})))})
- (tx :maxmx03/solarized.nvim {:opts {:transparent {:enabled true}
-                                     :palette :selenized
-                                     :variant :summer}
-                              ; :init #(do
-                              ;          (vim.cmd.colorscheme :solarized))
-                              })
- (tx :vague2k/vague.nvim {:opts {:transparent true}
-                          ; :init #(vim.cmd.colorscheme :vague)
-                          })
- (tx :brenoprata10/nvim-highlight-colors)
- (tx :kungfusheep/mfd.nvim ; {:init #(do
-     ;           (vim.cmd.colorscheme :mfd))}
-     )
- (tx :webhooked/kanso.nvim {:opts {:transparent true
-                                   :compile true
-                                   :background {:dark :mist :light :pearl}}
-                            ; :init #(do
-                            ;          (vim.cmd "set background=dark")
-                            ;          (vim.cmd.colorscheme :kanso-mist))
-                            })
- (tx :folke/tokyonight.nvim {:opts {:style :storm :transparent true}
-                             ; :init #(do
-                             ;          (vim.cmd "set background=dark")
-                             ;          (vim.cmd.colorscheme :tokyonight))
-                             })]
+                 (vim.api.nvim_set_hl 0 group {:link "@keyword.operator"})))})]
